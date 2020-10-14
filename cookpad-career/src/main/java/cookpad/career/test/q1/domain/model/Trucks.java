@@ -41,7 +41,7 @@ public class Trucks
 	}
 
 	private TruckId minimumWeightTruckId() {
-		// トラックに荷物を積んだ結果同じサイズになる場合があった場合の考慮。
+		// トラックに荷物を積んだ結果同じサイズになる場合の考慮。
 		// 重さが同じだった場合は箱IDの若い順に荷物を積む必要がある。
 		// 単純に重さだけでどのトラックに荷物を積むかを判別するのは誤り。
 		final TreeMap<String, TreeSet<TruckId>> map = new TreeMap<String, TreeSet<TruckId>>();
