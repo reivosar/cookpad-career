@@ -12,8 +12,7 @@ public class Trucks
 {
 	private final Map<TruckId, Truck> truckStore;
 
-	public Trucks(final int loadTrucksNumber)
-	{
+	public Trucks(final int loadTrucksNumber) {
 		this.truckStore = new HashMap<TruckId, Truck>(loadTrucksNumber);
 		IntStream.range(1, loadTrucksNumber + 1)
 			.forEach(number -> {
