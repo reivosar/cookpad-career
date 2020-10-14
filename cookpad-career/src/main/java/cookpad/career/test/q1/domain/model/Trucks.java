@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.IntStream;
@@ -22,7 +23,27 @@ public class Trucks
 		);
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(truckStore);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Trucks other = (Trucks) obj;
+		return Objects.equals(truckStore, other.truckStore);
+	}
+
 	private TruckId minimumWeightTruckId() {
+		// トラックに荷物を積んだ結果同じサイズになる場合があった場合の考慮。
+		// 重さが同じだった場合は箱IDの若い順に荷物を積む必要がある。
+		// 単純に重さだけでどのトラックに荷物を積むかを判別するのは誤り。
 		final TreeMap<String, TreeSet<TruckId>> map = new TreeMap<String, TreeSet<TruckId>>();
 		truckStore.forEach((truckId, truck) -> {
 			final String key = truck.totalWeight().toString();
@@ -35,14 +56,19 @@ public class Trucks
 	}
 
 	public void load(final Cargos cargos) {
-		cargos.allCargos().stream().forEach(luggage -> {
+		cargos.allCargos().stream().forEach(cargo -> {
 			final TruckId truckId = minimumWeightTruckId();
 			final Truck truck     = truckStore.get(truckId);
-			truck.load(luggage);
+			truck.load(cargo);
 		});
 	}
 
 	public Collection<Truck> allTrucks() {
 		return truckStore.values();
+	}
+
+	@Override
+	public String toString() {
+		return truckStore.toString();
 	}
 }
