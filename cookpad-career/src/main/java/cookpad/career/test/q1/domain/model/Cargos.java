@@ -60,4 +60,9 @@ public class Cargos
 	private Stream<Cargo> stream() {
 		return cargos.stream();
 	}
+
+	@Override
+	public String toString() {
+		return cargos.toString();
+	}
 }
