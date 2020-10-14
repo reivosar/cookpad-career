@@ -5,6 +5,8 @@
 ■クックパッドマートのエンジニア採用試験 | クックパッドのマートの採用  
 https://cookpad-mart-careers.studio.site/engineer  
 
+設問は3つあるようだが、面倒なので最初の問題だけ回答。
+
 # 開発環境
 
 * Java 11
