@@ -48,7 +48,7 @@ public class Cargos
 	}
 
 	public Collection<String> ids() {
-		return cargos.stream()
+		return stream()
 				.map     (luggage -> luggage.id().toString())
 				.collect (Collectors.toList());
 	}
