@@ -12,28 +12,28 @@ import cookpad.career.test.q1.domain.model.Trucks;
 
 public class Parameter
 {
-	private final int loadTrucksNumber;
+	private final Trucks trucks;
 	private final Cargos cargos;
 
 	public Parameter(final int loadTrucksNumber, final String[] params) {
-		this.loadTrucksNumber = loadTrucksNumber;
+		this.trucks = new Trucks(loadTrucksNumber);
 		this.cargos = new Cargos (
 			Arrays.asList(params).stream()
 				.map     (param -> param.split(":"))
-				.flatMap (param -> Stream.of(toLuggage(param)))
+				.flatMap (param -> Stream.of(toCargo(param)))
 				.collect (Collectors.toList())
 		);
 	}
 
 	public Trucks toTrucks() {
-		return new Trucks(loadTrucksNumber);
+		return trucks;
 	}
 
 	public Cargos toCargos() {
 		return cargos;
 	}
 
-	private Cargo toLuggage(final String[] param) {
+	private Cargo toCargo(final String[] param) {
 		return new Cargo (
 			new CargoId     (param[0].trim()),
 			new CargoWeight (Integer.parseInt(param[1].trim()))
