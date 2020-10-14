@@ -38,9 +38,9 @@ public class Cargos
 	public CargoWeight totalWeight() {
 		final CargoWeight result = new CargoWeight(0);
 		return result.sum(stream ()
-						.map     (luggage -> luggage.weight())
-						.collect (Collectors.toList())
-						.toArray (new CargoWeight[0]));
+                    .map     (luggage -> luggage.weight())
+                    .collect (Collectors.toList())
+                    .toArray (new CargoWeight[0]));
 	}
 
 	public Collection<Cargo> allCargos() {

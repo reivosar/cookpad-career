@@ -30,9 +30,9 @@ public class CargoWeight
 
 	public CargoWeight sum(final CargoWeight... others) {
 		return new CargoWeight(this.value + Arrays.asList(others)
-												.stream()
-												.mapToInt(other -> other.value)
-												.sum());
+                                                .stream()
+                                                .mapToInt(other -> other.value)
+                                                .sum());
 	}
 
 	@Override
