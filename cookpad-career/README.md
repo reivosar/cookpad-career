@@ -6,9 +6,3 @@
 https://cookpad-mart-careers.studio.site/engineer
 
 設問は3つあるようだが、最初の問題だけ回答。
-
-# 開発環境
-
-* Java 11
-* eclipse
-
