@@ -56,11 +56,11 @@ public class Trucks
 	}
 
 	public void load(final Cargos cargos) {
-		cargos.allCargos().stream().forEach(cargo -> {
+		for (Cargo cargo : cargos.allCargos()) {
 			final TruckId truckId = minimumWeightTruckId();
 			final Truck truck     = truckStore.get(truckId);
 			truck.load(cargo);
-		});
+		};
 	}
 
 	public Collection<Truck> allTrucks() {

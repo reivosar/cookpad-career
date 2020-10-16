@@ -8,8 +8,8 @@ public class Truck
 	private final Cargos cargos;
 
 	public Truck(final TruckId truckId) {
-		this.truckId  = truckId;
-		this.cargos = Cargos.empty();
+		this.truckId = truckId;
+		this.cargos  = Cargos.empty();
 	}
 
 	@Override
