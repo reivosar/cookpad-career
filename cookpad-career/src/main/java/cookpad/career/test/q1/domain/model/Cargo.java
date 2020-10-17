@@ -36,4 +36,9 @@ public class Cargo
 	public CargoWeight weight() {
 		return weight;
 	}
+
+	@Override
+	public String toString() {
+		return "Cargo [id=" + id + ", weight=" + weight + "]";
+	}
 }
