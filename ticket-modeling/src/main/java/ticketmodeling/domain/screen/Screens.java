@@ -6,9 +6,9 @@ import ticketmodeling.domain.shared.ValueObject;
 
 public class Screens extends ValueObject<Screens>
 {
-	final Collection<Screen> screen;
+	final Collection<Screen> screens;
 
-	public Screens(Collection<Screen> schedules) {
-		this.screen = schedules;
+	public Screens(Collection<Screen> screens) {
+		this.screens = screens;
 	}
 }
