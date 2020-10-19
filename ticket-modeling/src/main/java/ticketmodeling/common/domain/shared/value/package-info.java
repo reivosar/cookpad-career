@@ -1,0 +1,1 @@
+package ticketmodeling.common.domain.shared.value;
