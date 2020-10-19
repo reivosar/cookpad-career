@@ -3,13 +3,14 @@ package ticketmodeling.domain.audience.identify;
 import ticketmodeling.common.domain.shared.ValueObject;
 import ticketmodeling.domain.audience.AudienceId;
 import ticketmodeling.domain.audience.AudienceProfile;
+import ticketmodeling.domain.audience.AudienceType;
 
-public class PersonalIdentify extends ValueObject<PersonalIdentify>
+public class SeniorIdentify extends ValueObject<SeniorIdentify>
 	implements AudienceIdentify
 {
 	@Override
 	public AudienceId getId() {
-		return null;
+		return new AudienceId(AudienceType.SENIOR.name());
 	}
 
 	@Override
