@@ -13,5 +13,5 @@ public abstract class Audience<ENTITY extends Audience<ENTITY>>
 		this.profile = profile;
 	}
 
-	public abstract AudienceType type();
+	protected abstract AudienceType type();
 }
