@@ -4,14 +4,13 @@ import java.math.BigDecimal;
 import java.util.Currency;
 
 import ticketmodeling.common.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.primitive.Money;
 
 public class Price extends ValueObject<Price>
 {
-	final BigDecimal money;
-	final Currency currency;
+	final Money money;
 
-	public Price(BigDecimal money, Currency currency) {
-		this.money    = money;
-		this.currency = currency;
+	public Price(BigDecimal decimal, Currency currency) {
+		this.money = new Money(decimal, currency);
 	}
 }

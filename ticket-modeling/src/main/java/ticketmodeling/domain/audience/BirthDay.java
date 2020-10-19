@@ -1,7 +1,7 @@
 package ticketmodeling.domain.audience;
 
 import ticketmodeling.common.domain.shared.ValueObject;
-import ticketmodeling.common.domain.shared.value.YearMonthDay;
+import ticketmodeling.common.domain.shared.primitive.YearMonthDay;
 
 public class BirthDay extends ValueObject<BirthDay>
 {

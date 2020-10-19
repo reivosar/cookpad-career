@@ -1,4 +1,4 @@
-package ticketmodeling.common.domain.shared.value;
+package ticketmodeling.common.domain.shared.primitive;
 
 import ticketmodeling.common.domain.shared.ValueObject;
 
