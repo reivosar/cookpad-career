@@ -2,8 +2,8 @@ package ticketmodeling.domain.theater;
 
 import java.util.Collection;
 
+import ticketmodeling.common.domain.shared.Entity;
 import ticketmodeling.domain.screen.ScreenId;
-import ticketmodeling.domain.shared.Entity;
 
 public class Theater extends Entity<TheaterId, Theater>
 {

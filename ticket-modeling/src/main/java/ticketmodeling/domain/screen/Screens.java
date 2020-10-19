@@ -2,7 +2,7 @@ package ticketmodeling.domain.screen;
 
 import java.util.Collection;
 
-import ticketmodeling.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.ValueObject;
 
 public class Screens extends ValueObject<Screens>
 {

@@ -1,6 +1,6 @@
 package ticketmodeling.domain.audience;
 
-import ticketmodeling.domain.shared.Entity;
+import ticketmodeling.common.domain.shared.Entity;
 
 public class Audience extends Entity<AudienceId, Audience>
 {

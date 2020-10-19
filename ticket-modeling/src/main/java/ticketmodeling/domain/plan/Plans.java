@@ -2,7 +2,7 @@ package ticketmodeling.domain.plan;
 
 import java.util.Collection;
 
-import ticketmodeling.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.ValueObject;
 
 public class Plans extends ValueObject<Plans>
 {

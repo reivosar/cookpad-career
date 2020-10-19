@@ -1,6 +1,6 @@
 package ticketmodeling.domain.schedule;
 
-import ticketmodeling.domain.shared.Identity;
+import ticketmodeling.common.domain.shared.Identity;
 
 public class ScheduleId extends Identity<ScheduleId>
 {

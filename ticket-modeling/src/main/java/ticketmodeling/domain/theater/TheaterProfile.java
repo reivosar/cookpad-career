@@ -1,6 +1,6 @@
 package ticketmodeling.domain.theater;
 
-import ticketmodeling.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.ValueObject;
 
 public class TheaterProfile extends ValueObject<TheaterProfile>
 {

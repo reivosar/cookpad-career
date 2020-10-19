@@ -1,6 +1,6 @@
 package ticketmodeling.domain.audience;
 
-import ticketmodeling.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.ValueObject;
 
 public class AudienceProfile extends ValueObject<AudienceProfile>
 {

@@ -1,6 +1,6 @@
 package ticketmodeling.domain.audience;
 
-import ticketmodeling.domain.shared.Identity;
+import ticketmodeling.common.domain.shared.Identity;
 
 public class AudienceId extends Identity<AudienceId>
 {

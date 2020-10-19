@@ -1,6 +1,6 @@
 package ticketmodeling.domain.plan;
 
-import ticketmodeling.domain.shared.Entity;
+import ticketmodeling.common.domain.shared.Entity;
 
 public class Plan extends Entity<PlanId, Plan>
 {

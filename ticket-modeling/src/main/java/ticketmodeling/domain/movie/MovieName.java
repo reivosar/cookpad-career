@@ -1,6 +1,6 @@
 package ticketmodeling.domain.movie;
 
-import ticketmodeling.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.ValueObject;
 
 public class MovieName extends ValueObject<MovieName>
 {

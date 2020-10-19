@@ -2,7 +2,7 @@ package ticketmodeling.domain.schedule;
 
 import java.util.Collection;
 
-import ticketmodeling.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.ValueObject;
 
 public class Schedules extends ValueObject<Schedules>
 {

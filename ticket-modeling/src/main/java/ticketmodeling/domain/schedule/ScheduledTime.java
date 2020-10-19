@@ -1,7 +1,7 @@
 package ticketmodeling.domain.schedule;
 
-import ticketmodeling.domain.shared.HourMinute;
-import ticketmodeling.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.value.HourMinute;
 
 public class ScheduledTime extends ValueObject<ScheduledTime>
 {

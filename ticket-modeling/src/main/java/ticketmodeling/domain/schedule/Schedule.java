@@ -1,7 +1,7 @@
 package ticketmodeling.domain.schedule;
 
+import ticketmodeling.common.domain.shared.Entity;
 import ticketmodeling.domain.movie.MovieId;
-import ticketmodeling.domain.shared.Entity;
 
 public class Schedule extends Entity<ScheduleId, Schedule>
 {

@@ -1,6 +1,6 @@
 package ticketmodeling.domain.plan;
 
-import ticketmodeling.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.ValueObject;
 
 public class PlanName extends ValueObject<PlanName>
 {

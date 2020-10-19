@@ -1,6 +1,6 @@
 package ticketmodeling.domain.screen;
 
-import ticketmodeling.domain.shared.Identity;
+import ticketmodeling.common.domain.shared.Identity;
 
 public class ScreenId extends Identity<ScreenId>
 {

@@ -1,4 +1,6 @@
-package ticketmodeling.domain.shared;
+package ticketmodeling.common.domain.shared.value;
+
+import ticketmodeling.common.domain.shared.ValueObject;
 
 public class HourMinute extends ValueObject<HourMinute>
 {

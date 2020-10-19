@@ -3,7 +3,7 @@ package ticketmodeling.domain.plan;
 import java.math.BigDecimal;
 import java.util.Currency;
 
-import ticketmodeling.domain.shared.ValueObject;
+import ticketmodeling.common.domain.shared.ValueObject;
 
 public class Price extends ValueObject<Price>
 {
