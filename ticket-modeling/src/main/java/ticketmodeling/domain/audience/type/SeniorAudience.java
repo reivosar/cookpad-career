@@ -2,13 +2,13 @@ package ticketmodeling.domain.audience.type;
 
 import ticketmodeling.domain.audience.AudienceType;
 import ticketmodeling.domain.audience.IdentifiedAudience;
-import ticketmodeling.domain.audience.identify.PersonalIdentify;
+import ticketmodeling.domain.audience.identify.SeniorIdentify;
 
 public class SeniorAudience extends IdentifiedAudience<SeniorAudience>
 {
-	final PersonalIdentify identity;
+	final SeniorIdentify identity;
 
-	public SeniorAudience(PersonalIdentify identity) {
+	public SeniorAudience(SeniorIdentify identity) {
 		super(identity);
 		this.identity = identity;
 	}
