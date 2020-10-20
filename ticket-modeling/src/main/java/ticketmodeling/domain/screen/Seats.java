@@ -1,24 +1,45 @@
 package ticketmodeling.domain.screen;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import ticketmodeling.common.domain.shared.ValueObject;
+import ticketmodeling.domain.schedule.ScheduleId;
 
 public class Seats extends ValueObject<Seats>
 {
-	final SeatCapacity capacity;
 	final Collection<Seat> seats;
 
-	public Seats(SeatCapacity capacity, Collection<Seat> seats) {
-		this.capacity = capacity;
-		this.seats    = seats;
+	public Seats(Collection<Seat> seats) {
+		this.seats = seats;
 	}
 
-	public Collection<Seat> allSeats() {
-		return this.seats;
+	public boolean reservationPossible(ScheduleId scheduleId) {
+		return emptyScheduledSeats(scheduleId).size() > 0;
 	}
 
-	public int capacityNumber() {
-		return capacity.value;
+	public Collection<Seat> allScheduledSeats(ScheduleId scheduleId) {
+		return this.seats.stream()
+			.filter(seat -> seat.scheduleId().equals(scheduleId))
+			.collect(Collectors.toList());
+	}
+
+	public Collection<Seat> reserveScheduledSeats(ScheduleId scheduleId) {
+		return this.allScheduledSeats(scheduleId).stream()
+			.filter(seat -> seat.reservedSeat())
+			.collect(Collectors.toList());
+	}
+
+	public Collection<Seat> emptyScheduledSeats(ScheduleId scheduleId) {
+		return this.allScheduledSeats(scheduleId).stream()
+			.filter(seat -> seat.emptySeat())
+			.collect(Collectors.toList());
+	}
+
+	public Collection<ScheduleId> allSchedules() {
+		return seats.stream()
+			.flatMap(seat -> Stream.of(seat.scheduleId()))
+			.collect(Collectors.toSet());
 	}
 }

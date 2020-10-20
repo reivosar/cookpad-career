@@ -1,6 +1,6 @@
 package ticketmodeling.domain.screen;
 
-public enum SeatReservation
+public enum SeatReservationType
 {
 	NO_RESERVATION,
 	RESERVED;
@@ -9,7 +9,7 @@ public enum SeatReservation
 		return this == RESERVED;
 	}
 
-	public boolean notReserved() {
+	public boolean noReservation() {
 		return !reserved();
 	}
 }
