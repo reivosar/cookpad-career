@@ -1,33 +1,82 @@
 package ticketmodeling.domain.audience;
 
-import ticketmodeling.domain.price.PriceType;
+import ticketmodeling.domain.audience.price.ChildAudiencePriceTable;
+import ticketmodeling.domain.audience.price.HandicappedAudiencePriceTable;
+import ticketmodeling.domain.audience.price.JuniorHandicappedAudiencePriceTable;
+import ticketmodeling.domain.audience.price.NormalAudiencePriceTable;
+import ticketmodeling.domain.audience.price.SeniorAudiencePriceTable;
+import ticketmodeling.domain.audience.price.SeniorCinemaCitizenAudiencePriceTable;
+import ticketmodeling.domain.audience.price.StudentAudiencePriceTable;
+import ticketmodeling.domain.audience.price.UniversityAudiencePriceTable;
+import ticketmodeling.domain.price.DateAndTimePriceTable;
 
 public enum AudienceType
 {
-	CINEMA_CITIZEN("シネマシティズン", PriceType.CINEMA_CITIZEN),
-	SENIOR_CINEMA_CITIZEN("シネマシティズン（60才以上）",PriceType.SENIOR_CINEMA_CITIZEN),
-	NORMAL("一般",PriceType.NORMAL),
-	SENIOR("シニア（70才以上）",PriceType.SENIOR),
-	UNIVERSITY("学生（大・専）",PriceType.UNIVERSITY),
-	STUDENT("中・高校生",PriceType.STUDENT),
-	CHILD("幼児（3才以上）・小学生",PriceType.CHILD),
-	HANDICAPPED("障がい者（学生以上）",PriceType.HANDICAPPED),
-	JUNIOR_HANDICAPPED("障がい者（高校以下）",PriceType.JUNIOR_HANDICAPPED),
+	CINEMA_CITIZEN("シネマシティズン") {
+		@Override
+		public DateAndTimePriceTable priceTable() {
+			return new ChildAudiencePriceTable();
+		}
+	},
+	SENIOR_CINEMA_CITIZEN("シネマシティズン（60才以上）") {
+		@Override
+		public DateAndTimePriceTable priceTable() {
+			return new SeniorCinemaCitizenAudiencePriceTable();
+		}
+	},
+	NORMAL("一般") {
+		@Override
+		public DateAndTimePriceTable priceTable() {
+			return new NormalAudiencePriceTable();
+		}
+	},
+	SENIOR("シニア（70才以上）") {
+		@Override
+		public DateAndTimePriceTable priceTable() {
+			return new SeniorAudiencePriceTable();
+		}
+	},
+	UNIVERSITY("学生（大・専）") {
+		@Override
+		public DateAndTimePriceTable priceTable() {
+			return new UniversityAudiencePriceTable();
+		}
+	},
+	STUDENT("中・高校生") {
+		@Override
+		public DateAndTimePriceTable priceTable() {
+			return new StudentAudiencePriceTable();
+		}
+	},
+	CHILD("幼児（3才以上）・小学生") {
+		@Override
+		public DateAndTimePriceTable priceTable() {
+			return new ChildAudiencePriceTable();
+		}
+	},
+	HANDICAPPED("障がい者（学生以上）") {
+		@Override
+		public DateAndTimePriceTable priceTable() {
+			return new HandicappedAudiencePriceTable();
+		}
+	},
+	JUNIOR_HANDICAPPED("障がい者（高校以下）") {
+		@Override
+		public DateAndTimePriceTable priceTable() {
+			return new JuniorHandicappedAudiencePriceTable();
+		}
+	},
 	;
 
 	private final String label;
-	private final PriceType priceType;
 
-	private AudienceType(String label, PriceType priceType) {
+	private AudienceType(String label) {
 		this.label = label;
-		this.priceType = priceType;
 	}
 
 	public String label() {
 		return label;
 	}
 
-	public PriceType priceType() {
-		return priceType;
-	}
+	public abstract DateAndTimePriceTable priceTable();
 }
