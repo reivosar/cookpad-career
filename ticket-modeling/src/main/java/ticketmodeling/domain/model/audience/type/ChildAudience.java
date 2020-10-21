@@ -4,7 +4,7 @@ import ticketmodeling.domain.model.audience.AudienceType;
 import ticketmodeling.domain.model.audience.IdentifiedAudience;
 import ticketmodeling.domain.model.audience.identify.ChildIdentify;
 
-public class ChildAudience extends IdentifiedAudience<ChildAudience>
+public class ChildAudience extends IdentifiedAudience<ChildIdentify, ChildAudience>
 {
 	final ChildIdentify identify;
 
@@ -16,9 +16,5 @@ public class ChildAudience extends IdentifiedAudience<ChildAudience>
 	@Override
 	public AudienceType type() {
 		return AudienceType.CHILD;
-	}
-
-	@Override
-	protected void verify() {
 	}
 }

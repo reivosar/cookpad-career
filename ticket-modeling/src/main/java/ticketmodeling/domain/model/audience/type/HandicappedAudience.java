@@ -4,7 +4,7 @@ import ticketmodeling.domain.model.audience.AudienceType;
 import ticketmodeling.domain.model.audience.IdentifiedAudience;
 import ticketmodeling.domain.model.audience.identify.HandicappedIdentify;
 
-public class HandicappedAudience extends IdentifiedAudience<HandicappedAudience>
+public class HandicappedAudience extends IdentifiedAudience<HandicappedIdentify, HandicappedAudience>
 {
 	final HandicappedIdentify identify;
 
@@ -16,9 +16,5 @@ public class HandicappedAudience extends IdentifiedAudience<HandicappedAudience>
 	@Override
 	public AudienceType type() {
 		return AudienceType.HANDICAPPED;
-	}
-
-	@Override
-	protected void verify() {
 	}
 }

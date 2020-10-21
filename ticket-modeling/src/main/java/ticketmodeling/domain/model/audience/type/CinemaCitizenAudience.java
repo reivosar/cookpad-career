@@ -4,7 +4,7 @@ import ticketmodeling.domain.model.audience.AudienceType;
 import ticketmodeling.domain.model.audience.IdentifiedAudience;
 import ticketmodeling.domain.model.audience.identify.CinemaCitizenIdentify;
 
-public class CinemaCitizenAudience extends IdentifiedAudience<CinemaCitizenAudience>
+public class CinemaCitizenAudience extends IdentifiedAudience<CinemaCitizenIdentify, CinemaCitizenAudience>
 {
 	final CinemaCitizenIdentify identify;
 
@@ -16,9 +16,5 @@ public class CinemaCitizenAudience extends IdentifiedAudience<CinemaCitizenAudie
 	@Override
 	public AudienceType type() {
 		return AudienceType.CINEMA_CITIZEN;
-	}
-
-	@Override
-	protected void verify() {
 	}
 }
