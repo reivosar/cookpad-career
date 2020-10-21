@@ -8,8 +8,6 @@ import ticketmodeling.common.domain.model.primitive.YearMonthDay;
 
 public class BirthDay extends ValueObject<BirthDay>
 {
-	public static BirthDay NONE = new BirthDay(new YearMonthDay(9999, 12, 31));
-
 	final YearMonthDay yearMonthDay;
 
 	public BirthDay(YearMonthDay yearMonthDay) {
@@ -23,7 +21,6 @@ public class BirthDay extends ValueObject<BirthDay>
 	public int age() {
 	    final LocalDate birthday = yearMonthDay.toLocalDate();
 	    final LocalDate today    = LocalDate.now();
-	    long duration = ChronoUnit.YEARS.between(birthday, today);
-	    return (int)duration;
+	    return (int)ChronoUnit.YEARS.between(birthday, today);
 	}
 }
