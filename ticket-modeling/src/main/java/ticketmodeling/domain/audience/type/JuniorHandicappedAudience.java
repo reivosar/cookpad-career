@@ -19,6 +19,6 @@ public class JuniorHandicappedAudience extends IdentifiedAudience<JuniorHandicap
 	}
 
 	@Override
-	protected void checkIdentify() {
+	protected void verify() {
 	}
 }

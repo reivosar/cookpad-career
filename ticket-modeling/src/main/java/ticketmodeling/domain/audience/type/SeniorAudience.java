@@ -19,6 +19,6 @@ public class SeniorAudience extends IdentifiedAudience<SeniorAudience>
 	}
 
 	@Override
-	protected void checkIdentify() {
+	protected void verify() {
 	}
 }

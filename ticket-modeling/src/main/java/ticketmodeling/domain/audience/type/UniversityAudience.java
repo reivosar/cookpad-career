@@ -19,6 +19,6 @@ public class UniversityAudience extends IdentifiedAudience<UniversityAudience> {
 	}
 
 	@Override
-	protected void checkIdentify() {
+	protected void verify() {
 	}
 }

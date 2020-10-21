@@ -19,6 +19,6 @@ public class HandicappedAudience extends IdentifiedAudience<HandicappedAudience>
 	}
 
 	@Override
-	protected void checkIdentify() {
+	protected void verify() {
 	}
 }

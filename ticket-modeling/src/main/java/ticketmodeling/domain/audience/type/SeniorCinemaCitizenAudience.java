@@ -19,6 +19,6 @@ public class SeniorCinemaCitizenAudience extends IdentifiedAudience<SeniorCinema
 	}
 
 	@Override
-	protected void checkIdentify() {
+	protected void verify() {
 	}
 }

@@ -7,7 +7,7 @@ import ticketmodeling.domain.audience.AudienceType;
 public class NormalAudience extends Audience<NormalAudience>
 {
 	public NormalAudience() {
-		super(new AudienceId(AudienceType.NORMAL.name()), null);
+		super(AudienceId.genereteId());
 	}
 
 	@Override

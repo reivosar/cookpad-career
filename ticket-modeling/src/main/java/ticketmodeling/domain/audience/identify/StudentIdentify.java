@@ -1,19 +1,10 @@
 package ticketmodeling.domain.audience.identify;
 
-import ticketmodeling.common.domain.shared.ValueObject;
-import ticketmodeling.domain.audience.AudienceId;
-import ticketmodeling.domain.audience.AudienceProfile;
+import java.security.cert.Certificate;
 
-public class StudentIdentify extends ValueObject<StudentIdentify>
-	implements AudienceIdentify
+public class StudentIdentify extends CertificateAudienceIdentify<StudentIdentify>
 {
-	@Override
-	public AudienceId getId() {
-		return null;
-	}
-
-	@Override
-	public AudienceProfile getProfile() {
-		return null;
+	public StudentIdentify(Certificate certificate) {
+		super(certificate);
 	}
 }

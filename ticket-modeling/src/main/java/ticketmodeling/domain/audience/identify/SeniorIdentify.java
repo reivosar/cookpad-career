@@ -1,20 +1,10 @@
 package ticketmodeling.domain.audience.identify;
 
-import ticketmodeling.common.domain.shared.ValueObject;
-import ticketmodeling.domain.audience.AudienceId;
-import ticketmodeling.domain.audience.AudienceProfile;
-import ticketmodeling.domain.audience.AudienceType;
+import java.security.cert.Certificate;
 
-public class SeniorIdentify extends ValueObject<SeniorIdentify>
-	implements AudienceIdentify
+public class SeniorIdentify extends CertificateAudienceIdentify<SeniorIdentify>
 {
-	@Override
-	public AudienceId getId() {
-		return new AudienceId(AudienceType.SENIOR.name());
-	}
-
-	@Override
-	public AudienceProfile getProfile() {
-		return null;
+	public SeniorIdentify(Certificate certificate) {
+		super(certificate);
 	}
 }

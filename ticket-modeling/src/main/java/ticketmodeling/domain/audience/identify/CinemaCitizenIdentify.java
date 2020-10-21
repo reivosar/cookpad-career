@@ -1,25 +1,10 @@
 package ticketmodeling.domain.audience.identify;
 
-import ticketmodeling.common.domain.shared.ValueObject;
-import ticketmodeling.domain.audience.AudienceId;
-import ticketmodeling.domain.audience.AudienceProfile;
+import java.security.cert.Certificate;
 
-public class CinemaCitizenIdentify extends ValueObject<CinemaCitizenIdentify>
-	implements AudienceIdentify
+public class CinemaCitizenIdentify extends CertificateAudienceIdentify<CinemaCitizenIdentify>
 {
-	final AudienceId id;
-	final AudienceProfile profile;
-
-	public CinemaCitizenIdentify(AudienceId id, AudienceProfile profile) {
-		this.id      = id;
-		this.profile = profile;
-	}
-
-	public AudienceId getId() {
-		return id;
-	}
-
-	public AudienceProfile getProfile() {
-		return profile;
+	public CinemaCitizenIdentify(Certificate certificate) {
+		super(certificate);
 	}
 }

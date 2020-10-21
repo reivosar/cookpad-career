@@ -1,20 +1,10 @@
 package ticketmodeling.domain.audience.identify;
 
-import ticketmodeling.common.domain.shared.ValueObject;
-import ticketmodeling.domain.audience.AudienceId;
-import ticketmodeling.domain.audience.AudienceProfile;
-import ticketmodeling.domain.audience.AudienceType;
+import java.security.cert.Certificate;
 
-public class HandicappedIdentify extends ValueObject<HandicappedIdentify>
-	implements AudienceIdentify
+public class HandicappedIdentify extends CertificateAudienceIdentify<HandicappedIdentify>
 {
-	@Override
-	public AudienceId getId() {
-		return new AudienceId(AudienceType.HANDICAPPED.name());
-	}
-
-	@Override
-	public AudienceProfile getProfile() {
-		return null;
+	public HandicappedIdentify(Certificate certificate) {
+		super(certificate);
 	}
 }
