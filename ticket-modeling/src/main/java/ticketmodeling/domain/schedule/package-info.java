@@ -1,1 +1,0 @@
-package ticketmodeling.domain.schedule;

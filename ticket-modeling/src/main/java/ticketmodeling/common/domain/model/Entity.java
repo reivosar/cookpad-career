@@ -1,0 +1,5 @@
+package ticketmodeling.common.domain.model;
+
+public abstract class Entity<ID extends Identity<ID>, ENTITY>
+	extends Model {
+}

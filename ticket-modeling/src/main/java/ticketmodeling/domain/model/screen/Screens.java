@@ -1,0 +1,14 @@
+package ticketmodeling.domain.model.screen;
+
+import java.util.Collection;
+
+import ticketmodeling.common.domain.model.ValueObject;
+
+public class Screens extends ValueObject<Screens>
+{
+	final Collection<Screen> screens;
+
+	public Screens(Collection<Screen> screens) {
+		this.screens = screens;
+	}
+}
