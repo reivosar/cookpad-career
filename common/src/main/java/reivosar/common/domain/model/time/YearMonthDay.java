@@ -55,7 +55,7 @@ public class YearMonthDay extends ValueObject<YearMonthDay> {
 	}
 
 	public boolean isHoliday () {
-		return JapaneseHolidays.equals(this);
+		return new JapaneseHolidays().equals(this);
 	}
 
 	public boolean isWeekend() {

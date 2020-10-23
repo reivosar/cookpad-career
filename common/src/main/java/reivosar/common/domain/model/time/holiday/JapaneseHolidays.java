@@ -10,9 +10,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import reivosar.common.domain.model.ValueObject;
 import reivosar.common.domain.model.time.YearMonthDay;
 
-public class JapaneseHolidays
+public class JapaneseHolidays extends ValueObject<JapaneseHolidays>
 {
 	private static final Collection<Holiday> HOLIDAYS;
 
@@ -40,10 +41,7 @@ public class JapaneseHolidays
 		return new Holiday(YearMonthDay.fromSlashFormat(splitedlines[0]), new HolidayName(splitedlines[1]));
 	}
 
-	private JapaneseHolidays() {
-	}
-
-	public static boolean equals(YearMonthDay yearMonthDay) {
+	public boolean equals(YearMonthDay yearMonthDay) {
 		return HOLIDAYS.stream()
 			.filter(holiday -> holiday.yearMonthDay.equals(yearMonthDay))
 			.findAny()
