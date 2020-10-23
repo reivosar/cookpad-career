@@ -30,7 +30,15 @@ public class HourMinute extends ValueObject<HourMinute>
 		return toLocalTime().isBefore(hm.toLocalTime());
 	}
 
+	public boolean isLessThan(HourMinute hm) {
+		return toLocalTime().compareTo(hm.toLocalTime()) <= 0;
+	}
+
 	public boolean isAfter(HourMinute hm) {
 		return toLocalTime().isAfter(hm.toLocalTime());
+	}
+
+	public boolean isMoreThan(HourMinute hm) {
+		return toLocalTime().compareTo(hm.toLocalTime()) >= 0;
 	}
 }
