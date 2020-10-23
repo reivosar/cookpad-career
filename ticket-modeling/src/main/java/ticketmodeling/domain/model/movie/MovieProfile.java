@@ -1,6 +1,6 @@
 package ticketmodeling.domain.model.movie;
 
-import ticketmodeling.common.domain.model.ValueObject;
+import reivosar.common.domain.model.ValueObject;
 
 public class MovieProfile extends ValueObject<MovieProfile>
 {

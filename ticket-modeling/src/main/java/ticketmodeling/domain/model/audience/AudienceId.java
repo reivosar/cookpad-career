@@ -2,7 +2,7 @@ package ticketmodeling.domain.model.audience;
 
 import java.util.UUID;
 
-import ticketmodeling.common.domain.model.Identity;
+import reivosar.common.domain.model.Identity;
 
 public class AudienceId extends Identity<AudienceId>
 {

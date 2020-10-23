@@ -1,6 +1,6 @@
 package ticketmodeling.domain.model.screen;
 
-import ticketmodeling.common.domain.model.ValueObject;
+import reivosar.common.domain.model.ValueObject;
 
 public class SeatCapacity extends ValueObject<SeatCapacity>
 {

@@ -1,6 +1,6 @@
 package ticketmodeling.domain.model.schedule;
 
-import ticketmodeling.common.domain.model.Entity;
+import reivosar.common.domain.model.Entity;
 import ticketmodeling.domain.model.movie.MovieId;
 import ticketmodeling.domain.model.screen.ScreenId;
 

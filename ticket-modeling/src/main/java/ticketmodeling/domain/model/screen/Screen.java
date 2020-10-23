@@ -2,7 +2,7 @@ package ticketmodeling.domain.model.screen;
 
 import java.util.Collection;
 
-import ticketmodeling.common.domain.model.Entity;
+import reivosar.common.domain.model.Entity;
 import ticketmodeling.domain.model.schedule.ScheduleId;
 import ticketmodeling.domain.model.theater.TheaterId;
 

@@ -3,8 +3,8 @@ package ticketmodeling.domain.model.audience;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-import ticketmodeling.common.domain.model.ValueObject;
-import ticketmodeling.common.domain.model.primitive.YearMonthDay;
+import reivosar.common.domain.model.time.YearMonthDay;
+import reivosar.common.domain.model.ValueObject;
 
 public class BirthDay extends ValueObject<BirthDay>
 {

@@ -1,6 +1,6 @@
 package ticketmodeling.domain.model.movie;
 
-import ticketmodeling.common.domain.model.Entity;
+import reivosar.common.domain.model.Entity;
 
 public class Movie extends Entity<MovieId, Movie>
 {

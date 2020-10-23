@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import ticketmodeling.common.domain.model.ValueObject;
+import reivosar.common.domain.model.ValueObject;
 import ticketmodeling.domain.model.schedule.ScheduleId;
 
 public class Seats extends ValueObject<Seats>

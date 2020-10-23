@@ -1,6 +1,6 @@
 package ticketmodeling.domain.model.audience.identify;
 
-import ticketmodeling.common.domain.model.ValueObject;
+import reivosar.common.domain.model.ValueObject;
 import ticketmodeling.domain.model.audience.AudienceId;
 import ticketmodeling.domain.model.audience.BirthDay;
 

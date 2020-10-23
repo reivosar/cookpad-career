@@ -1,7 +1,7 @@
 package ticketmodeling.domain.model.schedule;
 
-import ticketmodeling.common.domain.model.ValueObject;
-import ticketmodeling.common.domain.model.primitive.HourMinute;
+import reivosar.common.domain.model.time.HourMinute;
+import reivosar.common.domain.model.ValueObject;
 
 public class ScheduledTime extends ValueObject<ScheduledTime>
 {

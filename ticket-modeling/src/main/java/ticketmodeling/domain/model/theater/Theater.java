@@ -2,7 +2,7 @@ package ticketmodeling.domain.model.theater;
 
 import java.util.Collection;
 
-import ticketmodeling.common.domain.model.Entity;
+import reivosar.common.domain.model.Entity;
 import ticketmodeling.domain.model.screen.ScreenId;
 
 public class Theater extends Entity<TheaterId, Theater>
