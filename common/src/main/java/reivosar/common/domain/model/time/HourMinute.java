@@ -1,8 +1,8 @@
-package ticketmodeling.common.domain.model.primitive;
+package reivosar.common.domain.model.time;
 
 import java.time.LocalTime;
 
-import ticketmodeling.common.domain.model.ValueObject;
+import reivosar.common.domain.model.ValueObject;
 
 public class HourMinute extends ValueObject<HourMinute>
 {

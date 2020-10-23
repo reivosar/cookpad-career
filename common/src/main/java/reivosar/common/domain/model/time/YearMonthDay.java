@@ -1,9 +1,9 @@
-package ticketmodeling.common.domain.model.primitive;
+package reivosar.common.domain.model.time;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
-import ticketmodeling.common.domain.model.ValueObject;
+import reivosar.common.domain.model.ValueObject;
 
 public class YearMonthDay extends ValueObject<YearMonthDay> {
 	final Integer year;
