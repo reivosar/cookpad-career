@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public abstract class Identity<ID> extends ValueObject<ID>
 {
-	protected String genereteNativeIdByUUID () {
+	protected static String genereteNativeIdByUUID () {
 		return UUID.randomUUID().toString();
 	}
 }

@@ -1,7 +1,5 @@
 package ticketmodeling.domain.model.audience;
 
-import java.util.UUID;
-
 import reivosar.common.domain.model.Identity;
 
 public class AudienceId extends Identity<AudienceId>
@@ -13,6 +11,6 @@ public class AudienceId extends Identity<AudienceId>
 	}
 
 	public static AudienceId genereteId() {
-		return new AudienceId(UUID.randomUUID().toString());
+		return new AudienceId(genereteNativeIdByUUID());
 	}
 }
