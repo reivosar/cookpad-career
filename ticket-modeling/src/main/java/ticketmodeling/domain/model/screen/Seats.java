@@ -22,24 +22,24 @@ public class Seats extends ValueObject<Seats>
 	public Collection<Seat> allScheduledSeats(ScheduleId scheduleId) {
 		return this.seats.stream()
 			.filter(seat -> seat.scheduleId().equals(scheduleId))
-			.collect(Collectors.toList());
+			.collect(Collectors.toUnmodifiableList());
 	}
 
 	public Collection<Seat> reserveScheduledSeats(ScheduleId scheduleId) {
 		return this.allScheduledSeats(scheduleId).stream()
 			.filter(seat -> seat.reservedSeat())
-			.collect(Collectors.toList());
+			.collect(Collectors.toUnmodifiableList());
 	}
 
 	public Collection<Seat> emptyScheduledSeats(ScheduleId scheduleId) {
 		return this.allScheduledSeats(scheduleId).stream()
 			.filter(seat -> seat.emptySeat())
-			.collect(Collectors.toList());
+			.collect(Collectors.toUnmodifiableList());
 	}
 
 	public Collection<ScheduleId> allSchedules() {
 		return seats.stream()
 			.flatMap(seat -> Stream.of(seat.scheduleId()))
-			.collect(Collectors.toSet());
+			.collect(Collectors.toUnmodifiableSet());
 	}
 }
