@@ -23,6 +23,6 @@ public enum DateAndTimePriceType
 	}
 
 	private static boolean isLateHourMinute(HourMinute hm) {
-		return hm.isMoreThan(new HourMinute(20, 00));
+		return hm.isAfterThan(new HourMinute(20, 00));
 	}
 }

@@ -27,14 +27,15 @@ public class YearMonthDay extends ValueObject<YearMonthDay> {
 
 	public static YearMonthDay fromSlashFormat(String yyyymmdd) {
 		if (yyyymmdd == null || yyyymmdd.split("/").length != 3) {
-			throw new IllegalArgumentException("The format of the argument string must be in yyyy/MM/dd format. parameter:" + yyyymmdd);
+			throw new IllegalArgumentException(
+				"The format of the argument string must be in yyyy/MM/dd format. parameter:" + yyyymmdd);
 		}
-		final String[] splidateStr = yyyymmdd.split("/");
-		return new YearMonthDay(splidateStr[0], splidateStr[1], splidateStr[2]);
+		final String[] splitedStr = yyyymmdd.split("/");
+		return new YearMonthDay(splitedStr[0], splitedStr[1], splitedStr[2]);
 	}
 
 	public DayOfWeek toDayOfWeek() {
-		DayOfWeek result = DayOfWeek.from(toLocalDate());
+		final DayOfWeek result = DayOfWeek.from(toLocalDate());
 		return result;
 	}
 
@@ -55,11 +56,11 @@ public class YearMonthDay extends ValueObject<YearMonthDay> {
 	}
 
 	public boolean isHoliday () {
-		return new JapaneseHolidays().equals(this);
+		return JapaneseHolidays.of(this).isPresent();
 	}
 
 	public boolean isWeekend() {
-		DayOfWeek dayOfWeek = toDayOfWeek();
+		final DayOfWeek dayOfWeek = toDayOfWeek();
 		return dayOfWeek == DayOfWeek.SUNDAY ||
 				dayOfWeek == DayOfWeek.SATURDAY;
 	}

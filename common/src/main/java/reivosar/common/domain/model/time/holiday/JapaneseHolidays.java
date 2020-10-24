@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import reivosar.common.domain.model.ValueObject;
 import reivosar.common.domain.model.time.YearMonthDay;
@@ -16,8 +17,8 @@ import reivosar.common.domain.model.time.YearMonthDay;
 public class JapaneseHolidays extends ValueObject<JapaneseHolidays>
 {
 	private static final Collection<Holiday> HOLIDAYS;
-
 	private static final String FILE_URL = "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv";
+
 	static {
 		final List<Holiday> holidaysList = new ArrayList<>();
 		try (
@@ -41,10 +42,9 @@ public class JapaneseHolidays extends ValueObject<JapaneseHolidays>
 		return new Holiday(YearMonthDay.fromSlashFormat(splitedlines[0]), new HolidayName(splitedlines[1]));
 	}
 
-	public boolean equals(YearMonthDay yearMonthDay) {
+	public static Optional<Holiday> of(YearMonthDay yearMonthDay) {
 		return HOLIDAYS.stream()
-			.filter(holiday -> holiday.yearMonthDay.equals(yearMonthDay))
-			.findAny()
-			.isPresent();
+			.filter  (holiday -> holiday.yearMonthDay.equals(yearMonthDay))
+			.findAny ();
 	}
 }
