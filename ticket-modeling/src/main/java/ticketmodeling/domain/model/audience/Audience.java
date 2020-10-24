@@ -1,6 +1,7 @@
 package ticketmodeling.domain.model.audience;
 
 import reivosar.common.domain.model.Entity;
+import reivosar.common.domain.model.money.Money;
 import reivosar.common.domain.model.time.HourMinute;
 import reivosar.common.domain.model.time.YearMonthDay;
 import ticketmodeling.domain.model.price.DateAndTimePriceSpecific;
@@ -32,8 +33,8 @@ public abstract class Audience<ENTITY extends Audience<ENTITY>>
 		return new Ticket(id, schedule.publicId(), calcPrice(schedule.time()));
 	}
 
-	public Ticket buyTicket(Schedule schedule) {
-		return selectTicketToBuy(schedule).buyTicket();
+	public Ticket buyTicket(Schedule schedule, Money money) {
+		return selectTicketToBuy(schedule).buyTicket(money);
 	}
 
 	@Override

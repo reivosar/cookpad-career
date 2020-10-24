@@ -1,6 +1,7 @@
 package ticketmodeling.domain.model.ticket;
 
 import reivosar.common.domain.model.Entity;
+import reivosar.common.domain.model.money.Money;
 import ticketmodeling.domain.model.audience.AudienceId;
 import ticketmodeling.domain.model.price.Price;
 import ticketmodeling.domain.model.schedule.ScheduleId;
@@ -28,7 +29,7 @@ public class Ticket extends Entity<TicketId, Ticket>
 		return ticketId;
 	}
 
-	public Ticket buyTicket() {
+	public Ticket buyTicket(Money money) {
 		// イベント送信を行う
 		return this;
 	}
