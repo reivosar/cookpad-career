@@ -22,4 +22,13 @@ public class Schedule extends Entity<ScheduleId, Schedule>
 		this.screenId      = screenId;
 		this.movieId       = movieId;
 	}
+
+	@Override
+	public ScheduleId publicId() {
+		return scheduleId;
+	}
+
+	public ScheduledTime time() {
+		return scheduledTime;
+	}
 }

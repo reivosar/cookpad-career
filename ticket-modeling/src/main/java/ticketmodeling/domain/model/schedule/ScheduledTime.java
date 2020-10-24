@@ -1,13 +1,29 @@
 package ticketmodeling.domain.model.schedule;
 
-import reivosar.common.domain.model.time.HourMinute;
 import reivosar.common.domain.model.ValueObject;
+import reivosar.common.domain.model.time.HourMinute;
+import reivosar.common.domain.model.time.YearMonthDay;
 
 public class ScheduledTime extends ValueObject<ScheduledTime>
 {
+	final YearMonthDay yearMonthDay;
 	final HourMinute hourMinute;
 
+	public ScheduledTime(YearMonthDay yearMonthDay, HourMinute hourMinute) {
+		this.yearMonthDay = yearMonthDay;
+		this.hourMinute   = hourMinute;
+	}
+
 	public ScheduledTime(HourMinute hourMinute) {
-		this.hourMinute = hourMinute;
+		this.yearMonthDay = YearMonthDay.now();
+		this.hourMinute   = hourMinute;
+	}
+
+	public YearMonthDay yearMonthDay() {
+		return yearMonthDay;
+	}
+
+	public HourMinute hourMinute() {
+		return hourMinute;
 	}
 }

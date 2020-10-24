@@ -1,9 +1,9 @@
 package ticketmodeling.domain.model.screen;
 
-import reivosar.common.domain.model.ValueObject;
+import reivosar.common.domain.model.Entity;
 import ticketmodeling.domain.model.schedule.ScheduleId;
 
-public class Seat extends ValueObject<Seat>
+public class Seat extends Entity<SeatId, Seat>
 {
 	final SeatId seatId;
 	final SeatProfile profile;
@@ -32,5 +32,10 @@ public class Seat extends ValueObject<Seat>
 
 	public ScheduleId scheduleId () {
 		return this.reservation.scheduleId;
+	}
+
+	@Override
+	public SeatId publicId() {
+		return seatId;
 	}
 }

@@ -24,4 +24,9 @@ public class Theater extends Entity<TheaterId, Theater>
 	public Collection<ScreenId> allScreening() {
 		return screens;
 	}
+
+	@Override
+	public TheaterId publicId() {
+		return id;
+	}
 }

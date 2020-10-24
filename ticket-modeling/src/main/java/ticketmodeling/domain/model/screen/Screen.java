@@ -44,4 +44,9 @@ public class Screen extends Entity<ScreenId, Screen>
 	public Collection<Seat> emptyScheduledSeats(ScheduleId scheduleId) {
 		return this.seats.emptyScheduledSeats(scheduleId);
 	}
+
+	@Override
+	public ScreenId publicId() {
+		return screenId;
+	}
 }

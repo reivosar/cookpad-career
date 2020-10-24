@@ -1,5 +1,10 @@
 package reivosar.common.domain.model;
 
-public abstract class Identity<ID> extends ValueObject<ID> {
+import java.util.UUID;
 
+public abstract class Identity<ID> extends ValueObject<ID>
+{
+	protected String genereteNativeIdByUUID () {
+		return UUID.randomUUID().toString();
+	}
 }

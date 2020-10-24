@@ -14,4 +14,9 @@ public class Movie extends Entity<MovieId, Movie>
 		this.id       = id;
 		this.profile  = profile;
 	}
+
+	@Override
+	public MovieId publicId() {
+		return id;
+	}
 }

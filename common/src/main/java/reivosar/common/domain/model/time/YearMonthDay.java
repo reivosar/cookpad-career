@@ -7,18 +7,22 @@ import reivosar.common.domain.model.ValueObject;
 import reivosar.common.domain.model.time.holiday.JapaneseHolidays;
 
 public class YearMonthDay extends ValueObject<YearMonthDay> {
-	final Integer year;
-	final Integer month;
-	final Integer day;
+	final LocalDate localDate;
 
 	private YearMonthDay(Integer year, Integer month, Integer day) {
-		this.year  = year;
-		this.month = month;
-		this.day   = day;
+		this(LocalDate.of(year, month, day));
 	}
 
 	private YearMonthDay(String year, String month, String day) {
 		this(Integer.parseInt(year), Integer.parseInt(month) ,Integer.parseInt(day));
+	}
+
+	private YearMonthDay(LocalDate localDate) {
+		this.localDate = localDate;
+	}
+
+	public static YearMonthDay now() {
+		return new YearMonthDay(LocalDate.now());
 	}
 
 	public static YearMonthDay of(Integer year, Integer month, Integer day) {
@@ -40,19 +44,19 @@ public class YearMonthDay extends ValueObject<YearMonthDay> {
 	}
 
 	public LocalDate toLocalDate() {
-		return LocalDate.of(year, month, day);
+		return localDate;
 	}
 
 	public boolean equalsYear(int year) {
-		return this.year.equals(year);
+		return this.localDate.getYear() == year;
 	}
 
 	public boolean equalsMonth(int month) {
-		return this.month.equals(month);
+		return this.localDate.getMonthValue() == month;
 	}
 
 	public boolean equalsDay(int day) {
-		return this.day.equals(day);
+		return this.localDate.getDayOfMonth() == (day);
 	}
 
 	public boolean isHoliday () {
