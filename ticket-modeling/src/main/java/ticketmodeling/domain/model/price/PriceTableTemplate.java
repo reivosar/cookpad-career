@@ -1,11 +1,9 @@
-package ticketmodeling.domain.model.audience.price;
+package ticketmodeling.domain.model.price;
 
 import java.util.Currency;
 import java.util.Locale;
 
 import reivosar.common.domain.model.money.Money;
-import ticketmodeling.domain.model.price.DateAndTimePriceTable;
-import ticketmodeling.domain.model.price.Price;
 
 abstract class PriceTableTemplate implements DateAndTimePriceTable
 {

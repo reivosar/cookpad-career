@@ -1,5 +1,7 @@
 package ticketmodeling.domain.model.audience.price;
 
+import ticketmodeling.domain.model.price.PriceTableTemplate;
+
 public class NormalAudiencePriceTable extends PriceTableTemplate
 {
 	@Override
