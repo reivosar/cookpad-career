@@ -15,10 +15,10 @@ public class Age extends ValueObject<Age>
 	}
 
 	public boolean isOver(Age age) {
-		return this.value < age.value;
+		return this.value > age.value;
 	}
 
 	public boolean isLess(Age age) {
-		return this.value > age.value;
+		return this.value < age.value;
 	}
 }

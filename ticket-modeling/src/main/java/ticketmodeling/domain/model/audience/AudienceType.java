@@ -1,6 +1,7 @@
 package ticketmodeling.domain.model.audience;
 
 import ticketmodeling.domain.model.audience.price.ChildAudiencePriceTable;
+import ticketmodeling.domain.model.audience.price.CinemaCitizenAudiencePriceTable;
 import ticketmodeling.domain.model.audience.price.HandicappedAudiencePriceTable;
 import ticketmodeling.domain.model.audience.price.JuniorHandicappedAudiencePriceTable;
 import ticketmodeling.domain.model.audience.price.NormalAudiencePriceTable;
@@ -15,7 +16,7 @@ public enum AudienceType
 	CINEMA_CITIZEN("シネマシティズン") {
 		@Override
 		public DateAndTimePriceTable priceTable() {
-			return new ChildAudiencePriceTable();
+			return new CinemaCitizenAudiencePriceTable();
 		}
 	},
 	SENIOR_CINEMA_CITIZEN("シネマシティズン（60才以上）") {

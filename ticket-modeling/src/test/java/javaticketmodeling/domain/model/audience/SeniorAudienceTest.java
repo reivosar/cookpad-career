@@ -6,13 +6,14 @@ import static org.hamcrest.MatcherAssert.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import ticketmodeling.domain.model.audience.type.NormalAudience;
+import ticketmodeling.domain.model.audience.identify.SeniorIdentify;
+import ticketmodeling.domain.model.audience.type.SeniorAudience;
 
-class NormalAudienceTest extends AudienceTestTemplate<NormalAudience>
+class SeniorAudienceTest extends AudienceTestTemplate<SeniorAudience>
 {
 	@Override
-	protected NormalAudience  getAudience() {
-		return new NormalAudience();
+	protected SeniorAudience getAudience() {
+		return new SeniorAudience(new SeniorIdentify(new DummyCertificate()));
 	}
 
 	@Nested
@@ -34,60 +35,60 @@ class NormalAudienceTest extends AudienceTestTemplate<NormalAudience>
 	class 平日 extends AudienceTestTemplate.平日 {
 		@Test
 		void 時間が1959の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1800)));
+			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1100)));
 		}
 		@Test
 		void 時間が2000の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_2000), is(getAssertionPrice(1300)));
+			assertThat(getAudience().calcPrice(scheduledTime_2000), is(getAssertionPrice(1100)));
 		}
 		@Test
 		void 時間が2001の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_2001), is(getAssertionPrice(1300)));
+			assertThat(getAudience().calcPrice(scheduledTime_2001), is(getAssertionPrice(1100)));
 		}
 	}
 	@Nested
 	class 週末 extends AudienceTestTemplate.週末 {
 		@Test
 		void 時間が1959の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1800)));
+			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1100)));
 		}
 		@Test
 		void 時間が2000の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_2000), is(getAssertionPrice(1300)));
+			assertThat(getAudience().calcPrice(scheduledTime_2000), is(getAssertionPrice(1100)));
 		}
 		@Test
 		void 時間が2001の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_2001), is(getAssertionPrice(1300)));
+			assertThat(getAudience().calcPrice(scheduledTime_2001), is(getAssertionPrice(1100)));
 		}
 	}
 	@Nested
 	class 祝日 extends AudienceTestTemplate.祝日 {
 		@Test
 		void 時間が1959の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1800)));
+			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1100)));
 		}
 		@Test
 		void 時間が2000の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_2000), is(getAssertionPrice(1300)));
+			assertThat(getAudience().calcPrice(scheduledTime_2000), is(getAssertionPrice(1100)));
 		}
 		@Test
 		void 時間が2001の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_2001), is(getAssertionPrice(1300)));
+			assertThat(getAudience().calcPrice(scheduledTime_2001), is(getAssertionPrice(1100)));
 		}
 	}
 	@Nested
 	class 振替休日 extends AudienceTestTemplate.振替休日 {
 		@Test
 		void 時間が1959の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1800)));
+			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1100)));
 		}
 		@Test
 		void 時間が2000の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_2000), is(getAssertionPrice(1300)));
+			assertThat(getAudience().calcPrice(scheduledTime_2000), is(getAssertionPrice(1100)));
 		}
 		@Test
 		void 時間が2001の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_2001), is(getAssertionPrice(1300)));
+			assertThat(getAudience().calcPrice(scheduledTime_2001), is(getAssertionPrice(1100)));
 		}
 	}
 }

@@ -10,7 +10,7 @@ public class ChildIdentify extends ValueObject<ChildIdentify>
 {
 	final BirthDay birthDay;
 
-	private ChildIdentify(BirthDay birthDay) {
+	public ChildIdentify(BirthDay birthDay) {
 		this.birthDay = birthDay;
 	}
 

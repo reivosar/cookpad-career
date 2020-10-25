@@ -14,12 +14,12 @@ import ticketmodeling.domain.model.price.Price;
 import ticketmodeling.domain.model.schedule.ScheduledTime;
 
 @RunWith(Enclosed.class)
-abstract class AudienceTestTemplate
+abstract class AudienceTestTemplate<T extends Audience<T>>
 {
-	private static abstract class TestBehavior
-	{
-		protected abstract <T extends Audience<T>>T getAudience();
+	protected abstract T getAudience();
 
+	private static abstract class ThisBehavior
+	{
 		protected abstract YearMonthDay getYearMonthDay();
 
 		protected ScheduledTime scheduledTime_1959 = new ScheduledTime(getYearMonthDay(), new HourMinute(19, 59));
@@ -29,37 +29,41 @@ abstract class AudienceTestTemplate
 		protected Price getAssertionPrice (int price) {
 			return new Price(new Money(price, Currency.getInstance(Locale.JAPAN)));
 		}
+
+		abstract void 時間が1959の場合();
+		abstract void 時間が2000の場合();
+		abstract void 時間が2001の場合();
 	}
 
-	static abstract class 映画の日 extends TestBehavior {
+	static abstract class 映画の日 extends ThisBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 10, 1);
 		}
 	}
 
-	static abstract class 平日 extends TestBehavior {
+	static abstract class 平日 extends ThisBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 10, 23);
 		}
 	}
 
-	static abstract class 週末 extends TestBehavior {
+	static abstract class 週末 extends ThisBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 10, 24);
 		}
 	}
 
-	static abstract class 祝日 extends TestBehavior {
+	static abstract class 祝日 extends ThisBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 11, 03);
 		}
 	}
 
-	static abstract class 振替休日 extends TestBehavior {
+	static abstract class 振替休日 extends ThisBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 2, 24);

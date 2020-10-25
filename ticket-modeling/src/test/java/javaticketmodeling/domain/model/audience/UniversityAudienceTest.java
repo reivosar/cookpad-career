@@ -6,13 +6,14 @@ import static org.hamcrest.MatcherAssert.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import ticketmodeling.domain.model.audience.type.NormalAudience;
+import ticketmodeling.domain.model.audience.identify.UniversityIdentify;
+import ticketmodeling.domain.model.audience.type.UniversityAudience;
 
-class NormalAudienceTest extends AudienceTestTemplate<NormalAudience>
+class UniversityAudienceTest extends AudienceTestTemplate<UniversityAudience>
 {
 	@Override
-	protected NormalAudience  getAudience() {
-		return new NormalAudience();
+	protected UniversityAudience  getAudience() {
+		return new UniversityAudience(new UniversityIdentify(new DummyCertificate()));
 	}
 
 	@Nested
@@ -34,7 +35,7 @@ class NormalAudienceTest extends AudienceTestTemplate<NormalAudience>
 	class 平日 extends AudienceTestTemplate.平日 {
 		@Test
 		void 時間が1959の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1800)));
+			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1500)));
 		}
 		@Test
 		void 時間が2000の場合() {
@@ -49,7 +50,7 @@ class NormalAudienceTest extends AudienceTestTemplate<NormalAudience>
 	class 週末 extends AudienceTestTemplate.週末 {
 		@Test
 		void 時間が1959の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1800)));
+			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1500)));
 		}
 		@Test
 		void 時間が2000の場合() {
@@ -64,7 +65,7 @@ class NormalAudienceTest extends AudienceTestTemplate<NormalAudience>
 	class 祝日 extends AudienceTestTemplate.祝日 {
 		@Test
 		void 時間が1959の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1800)));
+			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1500)));
 		}
 		@Test
 		void 時間が2000の場合() {
@@ -79,7 +80,7 @@ class NormalAudienceTest extends AudienceTestTemplate<NormalAudience>
 	class 振替休日 extends AudienceTestTemplate.振替休日 {
 		@Test
 		void 時間が1959の場合() {
-			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1800)));
+			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1500)));
 		}
 		@Test
 		void 時間が2000の場合() {
