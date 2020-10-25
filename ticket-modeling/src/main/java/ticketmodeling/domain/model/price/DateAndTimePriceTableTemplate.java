@@ -5,7 +5,7 @@ import java.util.Locale;
 
 import reivosar.common.domain.model.money.Money;
 
-public abstract class PriceTableTemplate implements DateAndTimePriceTable
+public abstract class DateAndTimePriceTableTemplate implements DateAndTimePriceTable
 {
 	@Override
 	public final Price weekdayNormalPrice() {

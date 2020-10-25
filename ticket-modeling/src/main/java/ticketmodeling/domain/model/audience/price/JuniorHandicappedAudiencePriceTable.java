@@ -1,8 +1,8 @@
 package ticketmodeling.domain.model.audience.price;
 
-import ticketmodeling.domain.model.price.PriceTableTemplate;
+import ticketmodeling.domain.model.price.DateAndTimePriceTableTemplate;
 
-public class JuniorHandicappedAudiencePriceTable extends PriceTableTemplate
+public class JuniorHandicappedAudiencePriceTable extends DateAndTimePriceTableTemplate
 {
 	@Override
 	protected int weekdayNormalPrimitivePrice() {

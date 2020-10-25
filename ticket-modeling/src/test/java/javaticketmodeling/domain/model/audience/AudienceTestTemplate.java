@@ -1,0 +1,69 @@
+package javaticketmodeling.domain.model.audience;
+
+import java.util.Currency;
+import java.util.Locale;
+
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+
+import reivosar.common.domain.model.money.Money;
+import reivosar.common.domain.model.time.HourMinute;
+import reivosar.common.domain.model.time.YearMonthDay;
+import ticketmodeling.domain.model.audience.Audience;
+import ticketmodeling.domain.model.price.Price;
+import ticketmodeling.domain.model.schedule.ScheduledTime;
+
+@RunWith(Enclosed.class)
+abstract class AudienceTestTemplate
+{
+	private static abstract class TestBehavior
+	{
+		protected abstract <T extends Audience<T>>T getAudience();
+
+		protected abstract YearMonthDay getYearMonthDay();
+
+		protected ScheduledTime scheduledTime_1959 = new ScheduledTime(getYearMonthDay(), new HourMinute(19, 59));
+		protected ScheduledTime scheduledTime_2000 = new ScheduledTime(getYearMonthDay(), new HourMinute(20, 00));
+		protected ScheduledTime scheduledTime_2001 = new ScheduledTime(getYearMonthDay(), new HourMinute(20, 01));
+
+		protected Price getAssertionPrice (int price) {
+			return new Price(new Money(price, Currency.getInstance(Locale.JAPAN)));
+		}
+	}
+
+	static abstract class 映画の日 extends TestBehavior {
+		@Override
+		protected YearMonthDay getYearMonthDay() {
+			return YearMonthDay.of(2020, 10, 1);
+		}
+	}
+
+	static abstract class 平日 extends TestBehavior {
+		@Override
+		protected YearMonthDay getYearMonthDay() {
+			return YearMonthDay.of(2020, 10, 23);
+		}
+	}
+
+	static abstract class 週末 extends TestBehavior {
+		@Override
+		protected YearMonthDay getYearMonthDay() {
+			return YearMonthDay.of(2020, 10, 24);
+		}
+	}
+
+	static abstract class 祝日 extends TestBehavior {
+		@Override
+		protected YearMonthDay getYearMonthDay() {
+			return YearMonthDay.of(2020, 11, 03);
+		}
+	}
+
+	static abstract class 振替休日 extends TestBehavior {
+		@Override
+		protected YearMonthDay getYearMonthDay() {
+			return YearMonthDay.of(2020, 2, 24);
+		}
+	}
+}
+
