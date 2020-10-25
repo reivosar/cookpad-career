@@ -14,7 +14,7 @@ abstract class AudienceTestTemplate<T extends Audience<T>>
 {
 	protected abstract T getAudience();
 
-	private static abstract class ThisBehavior
+	private static abstract class ThisTestCaseBehavior
 	{
 		protected abstract YearMonthDay getYearMonthDay();
 
@@ -31,42 +31,42 @@ abstract class AudienceTestTemplate<T extends Audience<T>>
 		abstract void 時間が2001の場合();
 	}
 
-	static abstract class 映画の日_平日 extends ThisBehavior {
+	static abstract class 映画の日_平日 extends ThisTestCaseBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 10, 1);
 		}
 	}
 
-	static abstract class 映画の日_休日 extends ThisBehavior {
+	static abstract class 映画の日_休日 extends ThisTestCaseBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 3, 1);
 		}
 	}
 
-	static abstract class 平日 extends ThisBehavior {
+	static abstract class 平日 extends ThisTestCaseBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 10, 23);
 		}
 	}
 
-	static abstract class 週末 extends ThisBehavior {
+	static abstract class 週末 extends ThisTestCaseBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 10, 24);
 		}
 	}
 
-	static abstract class 祝日 extends ThisBehavior {
+	static abstract class 祝日 extends ThisTestCaseBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 11, 03);
 		}
 	}
 
-	static abstract class 振替休日 extends ThisBehavior {
+	static abstract class 振替休日 extends ThisTestCaseBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 2, 24);
