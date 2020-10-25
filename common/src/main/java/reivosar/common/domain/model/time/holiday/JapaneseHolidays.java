@@ -28,11 +28,10 @@ public class JapaneseHolidays extends ValueObject<JapaneseHolidays>
 		{
 			br.readLine();//ヘッダ行読み飛ばし
 			br.lines()
-				.filter  (line -> line != null && line.split(",").length ==2)
-				.map     (line -> line.split(","))
-				.map     (splitedlines -> resolveHoliday(splitedlines))
-				.forEach (holiday -> holidaysList.add(holiday));
-			HOLIDAYS = Collections.unmodifiableList(holidaysList);
+				.filter  (line    -> (line != null) && (line.split(",").length == 2))
+				.map     (line    -> resolveHoliday    (line.split(",")))
+				.forEach (holiday -> holidaysList.add  (holiday));
+			HOLIDAYS = Collections.unmodifiableList    (holidaysList);
 		} catch (Exception e) {
 			throw new IllegalStateException(e);
 		}
