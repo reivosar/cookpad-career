@@ -3,9 +3,6 @@ package javaticketmodeling.domain.model.audience;
 import java.util.Currency;
 import java.util.Locale;
 
-import org.junit.experimental.runners.Enclosed;
-import org.junit.runner.RunWith;
-
 import reivosar.common.domain.model.money.Money;
 import reivosar.common.domain.model.time.HourMinute;
 import reivosar.common.domain.model.time.YearMonthDay;
@@ -13,7 +10,6 @@ import ticketmodeling.domain.model.audience.Audience;
 import ticketmodeling.domain.model.price.Price;
 import ticketmodeling.domain.model.schedule.ScheduledTime;
 
-@RunWith(Enclosed.class)
 abstract class AudienceTestTemplate<T extends Audience<T>>
 {
 	protected abstract T getAudience();
