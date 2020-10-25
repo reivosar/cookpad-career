@@ -25,7 +25,7 @@ public class StudentAudiencePriceTable extends DateAndTimePriceTableTemplate
 	}
 
 	@Override
-	protected int movieDayPrimitivePrice() {
+	protected int weekdayMovieDayPrimitivePrice() {
 		return 1000;
 	}
 }

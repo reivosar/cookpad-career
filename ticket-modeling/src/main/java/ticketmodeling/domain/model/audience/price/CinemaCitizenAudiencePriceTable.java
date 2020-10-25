@@ -25,8 +25,13 @@ public class CinemaCitizenAudiencePriceTable extends DateAndTimePriceTableTempla
 	}
 
 	@Override
-	protected int movieDayPrimitivePrice() {
+	protected int weekdayMovieDayPrimitivePrice() {
 		return 1100;
+	}
+
+	@Override
+	protected int holidayMovieDayPrimitivePrice() {
+		return 1000;
 	}
 }
 

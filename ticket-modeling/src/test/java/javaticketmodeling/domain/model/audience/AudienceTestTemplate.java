@@ -35,10 +35,17 @@ abstract class AudienceTestTemplate<T extends Audience<T>>
 		abstract void 時間が2001の場合();
 	}
 
-	static abstract class 映画の日 extends ThisBehavior {
+	static abstract class 映画の日_平日 extends ThisBehavior {
 		@Override
 		protected YearMonthDay getYearMonthDay() {
 			return YearMonthDay.of(2020, 10, 1);
+		}
+	}
+
+	static abstract class 映画の日_休日 extends ThisBehavior {
+		@Override
+		protected YearMonthDay getYearMonthDay() {
+			return YearMonthDay.of(2020, 3, 1);
 		}
 	}
 

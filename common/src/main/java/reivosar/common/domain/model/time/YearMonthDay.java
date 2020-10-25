@@ -59,6 +59,10 @@ public class YearMonthDay extends ValueObject<YearMonthDay> {
 		return this.localDate.getDayOfMonth() == (day);
 	}
 
+	public boolean isWeekDay() {
+		return isWeekend() == false;
+	}
+
 	public boolean isHoliday () {
 		return JapaneseHolidays.of(this).isPresent();
 	}

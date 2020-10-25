@@ -10,5 +10,7 @@ public interface DateAndTimePriceTable
 
 	Price holidayLatePrice();
 
-	Price movieDayPrice();
+	Price weekdayMovieDayPrice();
+
+	Price holidayMovieDayPrice();
 }

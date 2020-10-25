@@ -17,7 +17,22 @@ class HandicappedAudienceTest extends AudienceTestTemplate<HandicappedAudience>
 	}
 
 	@Nested
-	class 映画の日 extends AudienceTestTemplate.映画の日 {
+	class 映画の日_平日 extends AudienceTestTemplate.映画の日_平日 {
+		@Test
+		void 時間が1959の場合() {
+			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1000)));
+		}
+		@Test
+		void 時間が2000の場合() {
+			assertThat(getAudience().calcPrice(scheduledTime_2000), is(getAssertionPrice(1000)));
+		}
+		@Test
+		void 時間が2001の場合() {
+			assertThat(getAudience().calcPrice(scheduledTime_2001), is(getAssertionPrice(1000)));
+		}
+	}
+	@Nested
+	class 映画の日_休日 extends AudienceTestTemplate.映画の日_休日 {
 		@Test
 		void 時間が1959の場合() {
 			assertThat(getAudience().calcPrice(scheduledTime_1959), is(getAssertionPrice(1000)));

@@ -25,7 +25,7 @@ public class JuniorHandicappedAudiencePriceTable extends DateAndTimePriceTableTe
 	}
 
 	@Override
-	protected int movieDayPrimitivePrice() {
+	protected int weekdayMovieDayPrimitivePrice() {
 		return 900;
 	}
 }

@@ -25,7 +25,7 @@ public class SeniorCinemaCitizenAudiencePriceTable extends DateAndTimePriceTable
 	}
 
 	@Override
-	protected int movieDayPrimitivePrice() {
+	protected int weekdayMovieDayPrimitivePrice() {
 		return 1000;
 	}
 }

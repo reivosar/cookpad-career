@@ -7,13 +7,17 @@ public enum DateAndTimePriceType
 {
 	WEEKDAY_NORMAL_PRICE,
 	WEEKDAY_LATE_PRICE,
+	WEEKDAY_MOVIEDAY_PRICE,
 	HOLIDAY_NORMAL_PRICE,
 	HOLIDAY_LATE_PRICE,
-	MOVIEDAY_PRICE;
+	HOLIDAY_MOVIEDAY_PRICE;
 
 	public static DateAndTimePriceType of (YearMonthDay ymd, HourMinute hm) {
-		if (ymd.equalsDay(1))
-			return MOVIEDAY_PRICE;
+		if (ymd.equalsDay(1)) {
+			if (ymd.isWeekend())
+				return HOLIDAY_MOVIEDAY_PRICE;
+			return WEEKDAY_MOVIEDAY_PRICE;
+		}
 
 		boolean lateHourMinute = isLateHourMinute(hm);
 		if (ymd.isWeekend() || ymd.isHoliday())

@@ -36,11 +36,21 @@ public abstract class DateAndTimePriceTableTemplate implements DateAndTimePriceT
 	protected abstract int holidayLatePrimitivePrice();
 
 	@Override
-	public final Price movieDayPrice() {
-		return new Price(getMoeny(movieDayPrimitivePrice()));
+	public final Price weekdayMovieDayPrice() {
+		return new Price(getMoeny(weekdayMovieDayPrimitivePrice()));
 	}
 
-	protected abstract int movieDayPrimitivePrice();
+	protected abstract int weekdayMovieDayPrimitivePrice();
+
+	@Override
+	public final Price holidayMovieDayPrice() {
+		return new Price(getMoeny(holidayMovieDayPrimitivePrice()));
+	}
+
+	protected int holidayMovieDayPrimitivePrice() {
+		// シネマシティズンのみ平日と休日で料金が異なる
+		return weekdayMovieDayPrimitivePrice();
+	}
 
 	private Money getMoeny(int value) {
 		return new Money(value, getCurrency());
