@@ -6,7 +6,8 @@ import java.time.LocalDate;
 import reivosar.common.domain.model.ValueObject;
 import reivosar.common.domain.model.time.holiday.JapaneseHolidays;
 
-public class YearMonthDay extends ValueObject<YearMonthDay> {
+public class YearMonthDay extends ValueObject<YearMonthDay>
+{
 	final LocalDate localDate;
 
 	private YearMonthDay(Integer year, Integer month, Integer day) {
@@ -57,6 +58,10 @@ public class YearMonthDay extends ValueObject<YearMonthDay> {
 
 	public boolean equalsDay(int day) {
 		return this.localDate.getDayOfMonth() == (day);
+	}
+
+	public boolean isDayOff() {
+		return isWeekend() || isHoliday();
 	}
 
 	public boolean isWeekDay() {

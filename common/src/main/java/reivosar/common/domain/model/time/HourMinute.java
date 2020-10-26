@@ -6,24 +6,22 @@ import reivosar.common.domain.model.ValueObject;
 
 public class HourMinute extends ValueObject<HourMinute>
 {
-	final Integer hour;
-	final Integer minute;
+	final LocalTime localTime;
 
 	public HourMinute(int hour, int minute) {
-		this.hour   = hour;
-		this.minute = minute;
+		this.localTime = LocalTime.of(hour, minute);
 	}
 
 	public LocalTime toLocalTime() {
-		return LocalTime.of(hour, minute);
+		return localTime;
 	}
 
 	public boolean equalsHour(int hour) {
-		return this.hour.equals(hour);
+		return this.localTime.getHour() == hour;
 	}
 
 	public boolean equalsMinute(int minute) {
-		return this.minute.equals(minute);
+		return this.localTime.getMinute() == minute;
 	}
 
 	public boolean isBefore(HourMinute hm) {
