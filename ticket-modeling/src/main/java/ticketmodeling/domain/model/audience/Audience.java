@@ -25,12 +25,12 @@ public abstract class Audience<ENTITY extends Audience<ENTITY>>
 		return specific.calcPrice();
 	}
 
-	public Price calcPrice(ScheduledTime scheduledTime) {
+	public Price calcScreenPrice(ScheduledTime scheduledTime) {
 		return calcScreenPrice(scheduledTime.yearMonthDay(), scheduledTime.hourMinute());
 	}
 
 	public Ticket selectTicketToBuy(Schedule schedule) {
-		return new Ticket(id, schedule.publicId(), calcPrice(schedule.time()));
+		return new Ticket(id, schedule.publicId(), calcScreenPrice(schedule.time()));
 	}
 
 	public Ticket buyTicket(Schedule schedule, Money money) {
