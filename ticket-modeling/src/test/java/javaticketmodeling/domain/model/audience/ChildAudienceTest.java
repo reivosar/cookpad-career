@@ -33,7 +33,6 @@ class ChildAudienceTest extends AudienceTestTemplate<ChildAudience>
 			assertThat(getAudience().calcScreenPrice(scheduledTime_2001), is(getAssertionPrice(1000)));
 		}
 	}
-
 	@Nested
 	class 映画の日_休日 extends AudienceTestTemplate.映画の日_休日 {
 		@Test
