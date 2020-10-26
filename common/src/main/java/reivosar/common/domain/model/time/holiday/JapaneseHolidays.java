@@ -41,7 +41,7 @@ public class JapaneseHolidays extends ValueObject<JapaneseHolidays>
 		return new Holiday(YearMonthDay.fromSlashFormat(splitedlines[0]), new HolidayName(splitedlines[1]));
 	}
 
-	public static Optional<Holiday> of(YearMonthDay yearMonthDay) {
+	public static Optional<Holiday> findHoliday(YearMonthDay yearMonthDay) {
 		return HOLIDAYS.stream()
 			.filter  (holiday -> holiday.yearMonthDay.equals(yearMonthDay))
 			.findAny ();
