@@ -1,4 +1,4 @@
-package javaticketmodeling.domain.model.audience;
+package ticketmodeling.domain.model.audience;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
@@ -6,16 +6,14 @@ import static org.hamcrest.MatcherAssert.*;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import reivosar.common.domain.model.time.YearMonthDay;
-import reivosar.common.domain.model.time.birthday.BirthDay;
-import ticketmodeling.domain.model.audience.identify.ChildIdentify;
-import ticketmodeling.domain.model.audience.type.ChildAudience;
+import ticketmodeling.domain.model.audience.identify.StudentIdentify;
+import ticketmodeling.domain.model.audience.type.StudentAudience;
 
-class ChildAudienceTest extends AudienceTestTemplate<ChildAudience>
+class StudentAudienceTest extends AudienceTestTemplate<StudentAudience>
 {
 	@Override
-	protected ChildAudience getAudience() {
-		return new ChildAudience(new ChildIdentify(new BirthDay(YearMonthDay.now())));
+	protected StudentAudience getAudience() {
+		return new StudentAudience(new StudentIdentify(new DummyCertificate()));
 	}
 
 	@Nested

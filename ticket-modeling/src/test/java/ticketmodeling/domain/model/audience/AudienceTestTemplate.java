@@ -1,4 +1,4 @@
-package javaticketmodeling.domain.model.audience;
+package ticketmodeling.domain.model.audience;
 
 import java.util.Currency;
 import java.util.Locale;

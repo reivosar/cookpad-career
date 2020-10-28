@@ -1,4 +1,4 @@
-package javaticketmodeling.domain.model.audience;
+package ticketmodeling.domain.model.audience;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
