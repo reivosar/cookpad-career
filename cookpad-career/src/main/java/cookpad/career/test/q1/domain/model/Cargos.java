@@ -2,11 +2,13 @@ package cookpad.career.test.q1.domain.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Objects;
+import java.util.Collections;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Cargos
+import reivosar.common.domain.model.ValueObject;
+
+public class Cargos extends ValueObject<Cargos>
 {
 	private final Collection<Cargo> cargos;
 
@@ -18,23 +20,6 @@ public class Cargos
 		this.cargos = cargos;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(cargos);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cargos other = (Cargos) obj;
-		return Objects.equals(cargos, other.cargos);
-	}
-
 	public CargoWeight totalWeight() {
 		final CargoWeight result = new CargoWeight(0);
 		return result.sum(stream ()
@@ -44,13 +29,19 @@ public class Cargos
 	}
 
 	public Collection<Cargo> allCargos() {
-		return cargos;
+		return Collections.unmodifiableCollection(cargos);
 	}
 
-	public Collection<String> ids() {
+	public Collection<CargoId> cargoIds() {
 		return stream()
-				.map     (cargo -> cargo.id().toString())
-				.collect (Collectors.toList());
+				.map     (cargo -> cargo.publicId())
+				.collect (Collectors.toUnmodifiableList());
+	}
+
+	public Collection<String> cargoNativeIds() {
+		return stream()
+				.map     (cargo -> cargo.publicId().toString())
+				.collect (Collectors.toUnmodifiableList());
 	}
 
 	public void load(final Cargo cargo) {
@@ -58,11 +49,6 @@ public class Cargos
 	}
 
 	private Stream<Cargo> stream() {
-		return cargos.stream();
-	}
-
-	@Override
-	public String toString() {
-		return cargos.toString();
+		return allCargos().stream();
 	}
 }

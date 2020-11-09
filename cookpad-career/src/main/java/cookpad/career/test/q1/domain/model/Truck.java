@@ -1,8 +1,10 @@
 package cookpad.career.test.q1.domain.model;
 
-import java.util.Objects;
+import java.util.Collection;
 
-public class Truck
+import reivosar.common.domain.model.Entity;
+
+public class Truck extends Entity<TruckId, Truck>
 {
 	private final TruckId truckId;
 	private final Cargos cargos;
@@ -13,24 +15,16 @@ public class Truck
 	}
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(cargos, truckId);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Truck other = (Truck) obj;
-		return Objects.equals(cargos, other.cargos) && Objects.equals(truckId, other.truckId);
+	public TruckId publicId() {
+		return truckId;
 	}
 
 	public CargoWeight totalWeight() {
 		return cargos.totalWeight();
+	}
+
+	public Collection<CargoId> cargoIds() {
+		return cargos.cargoIds();
 	}
 
 	public void load(final Cargo cargo) {
@@ -39,6 +33,6 @@ public class Truck
 
 	@Override
 	public String toString() {
-		return "truck_" + truckId.toString() + ":" + String.join(",", cargos.ids());
+		return "truck_" + truckId.toString() + ":" + String.join(",", cargos.cargoNativeIds());
 	}
 }

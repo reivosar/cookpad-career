@@ -4,12 +4,13 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.IntStream;
 
-public class Trucks
+import reivosar.common.domain.model.ValueObject;
+
+public class Trucks extends ValueObject<Trucks>
 {
 	private final Map<TruckId, Truck> truckStore;
 
@@ -21,23 +22,6 @@ public class Trucks
 				this.truckStore.put(truckId, new Truck(truckId));
 			}
 		);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(truckStore);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Trucks other = (Trucks) obj;
-		return Objects.equals(truckStore, other.truckStore);
 	}
 
 	private TruckId minimumWeightTruckId() {
@@ -63,12 +47,11 @@ public class Trucks
 		};
 	}
 
-	public Collection<Truck> allTrucks() {
-		return truckStore.values();
+	public Truck get(TruckId truckId) {
+		return truckStore.get(truckId);
 	}
 
-	@Override
-	public String toString() {
-		return truckStore.toString();
+	public Collection<Truck> allTrucks() {
+		return truckStore.values();
 	}
 }

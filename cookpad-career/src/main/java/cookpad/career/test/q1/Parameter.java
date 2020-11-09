@@ -15,11 +15,12 @@ public class Parameter
 	private final Trucks trucks;
 	private final Cargos cargos;
 
-	public Parameter(final int loadTrucksNumber, final String[] params) {
+	public Parameter(final int loadTrucksNumber, final String... params) {
 		this.trucks = new Trucks(loadTrucksNumber);
 		this.cargos = new Cargos (
 			Arrays.asList(params).stream()
 				.map     (param -> param.split(":"))
+				.filter  (param -> param.length == 2)
 				.flatMap (param -> Stream.of(toCargo(param)))
 				.collect (Collectors.toList())
 		);

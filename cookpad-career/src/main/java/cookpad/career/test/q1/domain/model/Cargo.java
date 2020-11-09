@@ -1,8 +1,8 @@
 package cookpad.career.test.q1.domain.model;
 
-import java.util.Objects;
+import reivosar.common.domain.model.Entity;
 
-public class Cargo
+public class Cargo extends Entity<CargoId, Cargo>
 {
 	private final CargoId id;
 	private final CargoWeight weight;
@@ -13,32 +13,11 @@ public class Cargo
 	}
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(id, weight);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cargo other = (Cargo) obj;
-		return Objects.equals(id, other.id) && Objects.equals(weight, other.weight);
-	}
-
-	public CargoId id() {
+	public CargoId publicId() {
 		return id;
 	}
 
 	public CargoWeight weight() {
 		return weight;
-	}
-
-	@Override
-	public String toString() {
-		return "Cargo [id=" + id + ", weight=" + weight + "]";
 	}
 }

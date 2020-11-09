@@ -1,30 +1,13 @@
 package cookpad.career.test.q1.domain.model;
 
-import java.util.Objects;
+import reivosar.common.domain.model.Identity;
 
-public class TruckId
+public class TruckId extends Identity<TruckId>
 {
 	private final Integer value;
 
 	public TruckId(Integer value) {
 		this.value = value;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(value);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		TruckId other = (TruckId) obj;
-		return Objects.equals(value, other.value);
 	}
 
 	@Override
