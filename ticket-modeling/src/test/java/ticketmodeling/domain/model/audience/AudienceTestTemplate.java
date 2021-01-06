@@ -6,7 +6,6 @@ import java.util.Locale;
 import reivosar.common.domain.model.money.Money;
 import reivosar.common.domain.model.time.HourMinute;
 import reivosar.common.domain.model.time.YearMonthDay;
-import ticketmodeling.domain.model.audience.Audience;
 import ticketmodeling.domain.model.price.Price;
 import ticketmodeling.domain.model.schedule.ScheduledTime;
 
