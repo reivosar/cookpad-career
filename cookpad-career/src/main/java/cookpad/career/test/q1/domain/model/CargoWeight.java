@@ -19,8 +19,7 @@ public class CargoWeight extends ValueObject<CargoWeight>
                                                 .sum());
 	}
 
-	@Override
-	public String toString() {
+	public String getAsString() {
 		return value.toString();
 	}
 }

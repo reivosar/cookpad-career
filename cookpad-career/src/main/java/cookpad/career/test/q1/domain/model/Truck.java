@@ -31,8 +31,7 @@ public class Truck extends Entity<TruckId, Truck>
 		this.cargos.load(cargo);
 	}
 
-	@Override
-	public String toString() {
-		return "truck_" + truckId.toString() + ":" + String.join(",", cargos.cargoNativeIds());
+	public String getAsString() {
+		return "truck_" + truckId.getAsString() + ":" + String.join(",", cargos.cargoNativeIds());
 	}
 }

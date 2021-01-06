@@ -10,6 +10,6 @@ public class TruckService
 	}
 
 	public void printScreen(Trucks trucks) {
-		trucks.allTrucks().forEach(truck -> System.out.println(truck));
+		trucks.allTrucks().forEach(truck -> System.out.println(truck.getAsString()));
 	}
 }

@@ -32,7 +32,7 @@ public class Trucks extends ValueObject<Trucks>
 		truckStore.forEach((truckId, truck) -> {
 			final String key = truck.totalWeight().toString();
 			final TreeSet<TruckId> truckIdList = map.getOrDefault(key,
-					new TreeSet<TruckId>(Comparator.comparing(TruckId::toString)));
+					new TreeSet<TruckId>(Comparator.comparing(TruckId::getAsString)));
 			truckIdList.add(truckId);
 			map.put(key, truckIdList);
 		});

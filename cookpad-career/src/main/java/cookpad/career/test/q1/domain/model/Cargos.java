@@ -40,7 +40,7 @@ public class Cargos extends ValueObject<Cargos>
 
 	public Collection<String> cargoNativeIds() {
 		return stream()
-				.map     (cargo -> cargo.publicId().toString())
+				.map     (cargo -> cargo.publicId().getAsString())
 				.collect (Collectors.toUnmodifiableList());
 	}
 

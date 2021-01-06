@@ -10,8 +10,7 @@ public class TruckId extends Identity<TruckId>
 		this.value = value;
 	}
 
-	@Override
-	public String toString() {
+	public String getAsString() {
 		return value.toString();
 	}
 }

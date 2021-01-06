@@ -10,8 +10,7 @@ public class CargoId extends Identity<CargoId>
 		this.value = value;
 	}
 
-	@Override
-	public String toString() {
+	public String getAsString() {
 		return value;
 	}
 }
