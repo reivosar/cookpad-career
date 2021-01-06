@@ -10,9 +10,9 @@ public class DateAndTimePriceSpecific extends ValueObject<DateAndTimePriceSpecif
 	private final DateAndTimePriceType priceType;
 
 	public DateAndTimePriceSpecific(
-		DateAndTimePriceTable priceTable,
-		YearMonthDay ymd,
-		HourMinute hm)
+	    final DateAndTimePriceTable priceTable,
+	    final YearMonthDay ymd,
+	    final HourMinute hm)
 	{
 		this.priceTable = priceTable;
 		this.priceType  = DateAndTimePriceType.of(ymd, hm);
