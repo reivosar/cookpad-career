@@ -8,7 +8,7 @@ public class SeatReservation extends ValueObject<SeatReservation>
 	final ScheduleId scheduleId;
 	final SeatReservationType reservationType;
 
-	public SeatReservation(ScheduleId scheduleId, SeatReservationType reservationType) {
+	public SeatReservation(final ScheduleId scheduleId, final SeatReservationType reservationType) {
 		this.scheduleId      = scheduleId;
 		this.reservationType = reservationType;
 	}

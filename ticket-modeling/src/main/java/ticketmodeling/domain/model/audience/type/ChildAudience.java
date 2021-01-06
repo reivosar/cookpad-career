@@ -8,7 +8,7 @@ public class ChildAudience extends IdentifiedAudience<ChildIdentify, ChildAudien
 {
 	final ChildIdentify identify;
 
-	public ChildAudience(ChildIdentify identify) {
+	public ChildAudience(final ChildIdentify identify) {
 		super(identify);
 		this.identify = identify;
 	}

@@ -14,9 +14,9 @@ public class Ticket extends Entity<TicketId, Ticket>
 	final Price price;
 
 	public Ticket(
-		AudienceId audienceId,
-		ScheduleId scheduleId,
-		Price price)
+		final AudienceId audienceId,
+		final ScheduleId scheduleId,
+		final Price price)
 	{
 		this.ticketId   = new TicketId();
 		this.audienceId = audienceId;
@@ -29,7 +29,7 @@ public class Ticket extends Entity<TicketId, Ticket>
 		return ticketId;
 	}
 
-	public Ticket buyTicket(Money money) {
+	public Ticket buyTicket(final Money money) {
 		// イベント送信を行う
 		return this;
 	}

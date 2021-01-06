@@ -5,12 +5,12 @@ import ticketmodeling.domain.model.audience.identify.AudienceIdentify;
 public abstract class IdentifiedAudience<I extends AudienceIdentify, ENTITY extends IdentifiedAudience<I, ENTITY>>
 		extends Audience<ENTITY> {
 
-	public IdentifiedAudience(I identify) {
+	public IdentifiedAudience(final I identify) {
 		super(identify.getId());
 		verify(identify);
 	}
 
-	protected void verify(I identify) {
+	protected void verify(final I identify) {
 		identify.verify();
 	}
 }

@@ -19,21 +19,21 @@ public abstract class Audience<ENTITY extends Audience<ENTITY>>
 		this.id = id;
 	}
 
-	public Price calcScreenPrice(YearMonthDay ymd, HourMinute hm) {
+	public Price calcScreenPrice(final YearMonthDay ymd, final HourMinute hm) {
 		DateAndTimePriceSpecific specific = new DateAndTimePriceSpecific(
 				type().priceTable(), ymd, hm);
 		return specific.calcPrice();
 	}
 
-	public Price calcScreenPrice(ScheduledTime scheduledTime) {
+	public Price calcScreenPrice(final ScheduledTime scheduledTime) {
 		return calcScreenPrice(scheduledTime.yearMonthDay(), scheduledTime.hourMinute());
 	}
 
-	public Ticket selectTicketToBuy(Schedule schedule) {
+	public Ticket selectTicketToBuy(final Schedule schedule) {
 		return new Ticket(id, schedule.publicId(), calcScreenPrice(schedule.time()));
 	}
 
-	public Ticket buyTicket(Schedule schedule, Money money) {
+	public Ticket buyTicket(final Schedule schedule, final Money money) {
 		return selectTicketToBuy(schedule).buyTicket(money);
 	}
 

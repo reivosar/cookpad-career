@@ -8,7 +8,7 @@ public class Schedules extends ValueObject<Schedules>
 {
 	final Collection<Schedule> schedules;
 
-	public Schedules(Collection<Schedule> schedules) {
+	public Schedules(final Collection<Schedule> schedules) {
 		this.schedules = schedules;
 	}
 }

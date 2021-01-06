@@ -8,7 +8,7 @@ public class JuniorHandicappedAudience extends IdentifiedAudience<JuniorHandicap
 {
 	final JuniorHandicappedIdentify identify;
 
-	public JuniorHandicappedAudience(JuniorHandicappedIdentify identify) {
+	public JuniorHandicappedAudience(final JuniorHandicappedIdentify identify) {
 		super(identify);
 		this.identify = identify;
 	}

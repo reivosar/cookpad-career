@@ -6,7 +6,7 @@ public class MovieName extends ValueObject<MovieName>
 {
 	final String value;
 
-	public MovieName(String value) {
+	public MovieName(final String value) {
 		this.value = value;
 	}
 }

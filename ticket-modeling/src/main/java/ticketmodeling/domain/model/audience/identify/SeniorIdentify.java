@@ -4,7 +4,7 @@ import java.security.cert.Certificate;
 
 public class SeniorIdentify extends CertificateAudienceIdentify<SeniorIdentify>
 {
-	public SeniorIdentify(Certificate certificate) {
+	public SeniorIdentify(final Certificate certificate) {
 		super(certificate);
 	}
 }

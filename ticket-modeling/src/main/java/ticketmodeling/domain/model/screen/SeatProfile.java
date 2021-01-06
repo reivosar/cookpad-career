@@ -6,7 +6,7 @@ public class SeatProfile extends ValueObject<SeatProfile>
 {
 	final SeatName name;
 
-	public SeatProfile(SeatName name) {
+	public SeatProfile(final SeatName name) {
 		this.name = name;
 	}
 }

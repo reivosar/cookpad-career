@@ -6,7 +6,7 @@ public class MovieId extends Identity<MovieId>
 {
 	final String value;
 
-	public MovieId(String value) {
+	public MovieId(final String value) {
 		this.value = value;
 	}
 }

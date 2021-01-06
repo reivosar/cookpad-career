@@ -4,7 +4,7 @@ import java.security.cert.Certificate;
 
 public class JuniorHandicappedIdentify extends CertificateAudienceIdentify<JuniorHandicappedIdentify>
 {
-	public JuniorHandicappedIdentify(Certificate certificate) {
+	public JuniorHandicappedIdentify(final Certificate certificate) {
 		super(certificate);
 	}
 }

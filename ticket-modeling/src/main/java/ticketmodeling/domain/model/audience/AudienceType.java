@@ -71,7 +71,7 @@ public enum AudienceType
 
 	private final String label;
 
-	private AudienceType(String label) {
+	private AudienceType(final String label) {
 		this.label = label;
 	}
 

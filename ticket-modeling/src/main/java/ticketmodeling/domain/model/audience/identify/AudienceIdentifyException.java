@@ -6,15 +6,15 @@ public class AudienceIdentifyException extends RuntimeException {
         super();
     }
 
-    public AudienceIdentifyException(String message) {
+    public AudienceIdentifyException(final String message) {
         super(message);
     }
 
-    public AudienceIdentifyException(String message, Throwable cause) {
+    public AudienceIdentifyException(final String message, final Throwable cause) {
         super(message, cause);
     }
 
-    public AudienceIdentifyException(Throwable cause) {
+    public AudienceIdentifyException(final Throwable cause) {
         super(cause);
     }
 

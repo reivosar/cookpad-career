@@ -6,7 +6,7 @@ public class TheaterId extends Identity<TheaterId>
 {
 	final String value;
 
-	public TheaterId(String value) {
+	public TheaterId(final String value) {
 		this.value = value;
 	}
 }

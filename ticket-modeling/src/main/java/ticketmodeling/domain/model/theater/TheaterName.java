@@ -6,7 +6,7 @@ public class TheaterName extends ValueObject<TheaterName>
 {
 	final String value;
 
-	public TheaterName(String value) {
+	public TheaterName(final String value) {
 		this.value = value;
 	}
 }

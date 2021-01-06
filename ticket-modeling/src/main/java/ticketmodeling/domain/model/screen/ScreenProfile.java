@@ -7,7 +7,7 @@ public class ScreenProfile extends ValueObject<ScreenProfile>
 	final ScreenName screenName;
 	final SeatCapacity capacity;
 
-	public ScreenProfile(ScreenName screenName, SeatCapacity capacity) {
+	public ScreenProfile(final ScreenName screenName, final SeatCapacity capacity) {
 		this.screenName = screenName;
 		this.capacity   = capacity;
 	}

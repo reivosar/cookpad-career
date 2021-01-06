@@ -6,7 +6,7 @@ public class SeatId extends Identity<SeatId>
 {
 	final String value;
 
-	public SeatId(String value) {
+	public SeatId(final String value) {
 		this.value = value;
 	}
 }

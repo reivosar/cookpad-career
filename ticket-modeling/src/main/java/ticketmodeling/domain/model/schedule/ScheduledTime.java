@@ -9,12 +9,12 @@ public class ScheduledTime extends ValueObject<ScheduledTime>
 	final YearMonthDay yearMonthDay;
 	final HourMinute hourMinute;
 
-	public ScheduledTime(YearMonthDay yearMonthDay, HourMinute hourMinute) {
+	public ScheduledTime(final YearMonthDay yearMonthDay, final HourMinute hourMinute) {
 		this.yearMonthDay = yearMonthDay;
 		this.hourMinute   = hourMinute;
 	}
 
-	public ScheduledTime(HourMinute hourMinute) {
+	public ScheduledTime(final HourMinute hourMinute) {
 		this.yearMonthDay = YearMonthDay.now();
 		this.hourMinute   = hourMinute;
 	}

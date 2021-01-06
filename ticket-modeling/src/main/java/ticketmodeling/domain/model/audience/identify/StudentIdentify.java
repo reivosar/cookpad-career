@@ -4,7 +4,7 @@ import java.security.cert.Certificate;
 
 public class StudentIdentify extends CertificateAudienceIdentify<StudentIdentify>
 {
-	public StudentIdentify(Certificate certificate) {
+	public StudentIdentify(final Certificate certificate) {
 		super(certificate);
 	}
 }

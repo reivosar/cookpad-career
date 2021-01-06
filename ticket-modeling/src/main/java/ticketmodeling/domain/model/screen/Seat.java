@@ -11,10 +11,10 @@ public class Seat extends Entity<SeatId, Seat>
 	final ScreenId screenId;
 
 	public Seat(
-		SeatId seatId,
-		SeatProfile profile,
-		SeatReservation reservation,
-		ScreenId screenId)
+		final SeatId seatId,
+		final SeatProfile profile,
+		final SeatReservation reservation,
+		final ScreenId screenId)
 	{
 		this.seatId      = seatId;
 		this.profile     = profile;

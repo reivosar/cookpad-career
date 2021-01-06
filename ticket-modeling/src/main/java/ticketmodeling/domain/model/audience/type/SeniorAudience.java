@@ -8,7 +8,7 @@ public class SeniorAudience extends IdentifiedAudience<SeniorIdentify, SeniorAud
 {
 	final SeniorIdentify identity;
 
-	public SeniorAudience(SeniorIdentify identity) {
+	public SeniorAudience(final SeniorIdentify identity) {
 		super(identity);
 		this.identity = identity;
 	}

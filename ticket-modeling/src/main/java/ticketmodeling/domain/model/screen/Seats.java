@@ -15,23 +15,23 @@ public class Seats extends ValueObject<Seats>
 		this.seats = seats;
 	}
 
-	public boolean reservationPossible(ScheduleId scheduleId) {
+	public boolean reservationPossible(final ScheduleId scheduleId) {
 		return emptyScheduledSeats(scheduleId).size() > 0;
 	}
 
-	public Collection<Seat> allScheduledSeats(ScheduleId scheduleId) {
+	public Collection<Seat> allScheduledSeats(final ScheduleId scheduleId) {
 		return this.seats.stream()
 			.filter(seat -> seat.scheduleId().equals(scheduleId))
 			.collect(Collectors.toUnmodifiableList());
 	}
 
-	public Collection<Seat> reserveScheduledSeats(ScheduleId scheduleId) {
+	public Collection<Seat> reserveScheduledSeats(final ScheduleId scheduleId) {
 		return this.allScheduledSeats(scheduleId).stream()
 			.filter(seat -> seat.reservedSeat())
 			.collect(Collectors.toUnmodifiableList());
 	}
 
-	public Collection<Seat> emptyScheduledSeats(ScheduleId scheduleId) {
+	public Collection<Seat> emptyScheduledSeats(final ScheduleId scheduleId) {
 		return this.allScheduledSeats(scheduleId).stream()
 			.filter(seat -> seat.emptySeat())
 			.collect(Collectors.toUnmodifiableList());

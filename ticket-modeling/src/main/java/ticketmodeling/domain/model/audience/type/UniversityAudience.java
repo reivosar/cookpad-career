@@ -8,7 +8,7 @@ public class UniversityAudience extends IdentifiedAudience<UniversityIdentify, U
 
 	final UniversityIdentify identify;
 
-	public UniversityAudience(UniversityIdentify identify) {
+	public UniversityAudience(final UniversityIdentify identify) {
 		super(identify);
 		this.identify = identify;
 	}

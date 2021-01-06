@@ -12,10 +12,10 @@ public class Schedule extends Entity<ScheduleId, Schedule>
 	final MovieId movieId;
 
 	public Schedule(
-		ScheduleId scheduleId,
-		ScheduledTime scheduledTime,
-		ScreenId screenId,
-		MovieId movieId)
+		final ScheduleId scheduleId,
+		final ScheduledTime scheduledTime,
+		final ScreenId screenId,
+		final MovieId movieId)
 	{
 		this.scheduleId    = scheduleId;
 		this.scheduledTime = scheduledTime;

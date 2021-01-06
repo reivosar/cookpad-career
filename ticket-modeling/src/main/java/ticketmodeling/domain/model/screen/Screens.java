@@ -8,7 +8,7 @@ public class Screens extends ValueObject<Screens>
 {
 	final Collection<Screen> screens;
 
-	public Screens(Collection<Screen> screens) {
+	public Screens(final Collection<Screen> screens) {
 		this.screens = screens;
 	}
 }

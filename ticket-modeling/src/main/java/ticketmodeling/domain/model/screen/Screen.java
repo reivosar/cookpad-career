@@ -14,10 +14,10 @@ public class Screen extends Entity<ScreenId, Screen>
 	final TheaterId theaterId;
 
 	public Screen(
-		ScreenId screenId,
-		ScreenProfile screenProfile,
-		Seats seats,
-		TheaterId theaterId)
+	    final ScreenId screenId,
+	    final ScreenProfile screenProfile,
+	    final Seats seats,
+	    final TheaterId theaterId)
 	{
 		this.screenId      = screenId;
 		this.screenProfile = screenProfile;
@@ -29,19 +29,19 @@ public class Screen extends Entity<ScreenId, Screen>
 		return this.seats.allSchedules();
 	}
 
-	public boolean reservationPossible(ScheduleId scheduleId) {
+	public boolean reservationPossible(final ScheduleId scheduleId) {
 		return this.seats.reservationPossible(scheduleId);
 	}
 
-	public Collection<Seat> allScheduledSeats(ScheduleId scheduleId) {
+	public Collection<Seat> allScheduledSeats(final ScheduleId scheduleId) {
 		return this.seats.allScheduledSeats(scheduleId);
 	}
 
-	public Collection<Seat> reserveScheduledSeats(ScheduleId scheduleId) {
+	public Collection<Seat> reserveScheduledSeats(final ScheduleId scheduleId) {
 		return this.seats.reserveScheduledSeats(scheduleId);
 	}
 
-	public Collection<Seat> emptyScheduledSeats(ScheduleId scheduleId) {
+	public Collection<Seat> emptyScheduledSeats(final ScheduleId scheduleId) {
 		return this.seats.emptyScheduledSeats(scheduleId);
 	}
 

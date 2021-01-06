@@ -6,7 +6,7 @@ public class ScheduleId extends Identity<ScheduleId>
 {
 	final String value;
 
-	public ScheduleId(String value) {
+	public ScheduleId(final String value) {
 		this.value = value;
 	}
 }

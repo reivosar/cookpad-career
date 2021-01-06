@@ -8,8 +8,8 @@ public class Movie extends Entity<MovieId, Movie>
 	final MovieProfile profile;
 
 	public Movie(
-		MovieId id,
-		MovieProfile profile)
+		final MovieId id,
+		final MovieProfile profile)
 	{
 		this.id       = id;
 		this.profile  = profile;

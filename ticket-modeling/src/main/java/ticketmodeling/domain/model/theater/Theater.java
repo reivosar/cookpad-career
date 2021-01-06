@@ -12,9 +12,9 @@ public class Theater extends Entity<TheaterId, Theater>
 	final Collection<ScreenId> screens;
 
 	public Theater(
-		TheaterId id,
-		TheaterProfile profile,
-		Collection<ScreenId> screens)
+		final TheaterId id,
+		final TheaterProfile profile,
+		final Collection<ScreenId> screens)
 	{
 		this.id      = id;
 		this.profile = profile;

@@ -4,7 +4,7 @@ import java.security.cert.Certificate;
 
 public class CinemaCitizenIdentify extends CertificateAudienceIdentify<CinemaCitizenIdentify>
 {
-	public CinemaCitizenIdentify(Certificate certificate) {
+	public CinemaCitizenIdentify(final Certificate certificate) {
 		super(certificate);
 	}
 }

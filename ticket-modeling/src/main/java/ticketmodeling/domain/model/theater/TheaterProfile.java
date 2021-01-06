@@ -6,7 +6,7 @@ public class TheaterProfile extends ValueObject<TheaterProfile>
 {
 	final TheaterName name;
 
-	public TheaterProfile(TheaterName name) {
+	public TheaterProfile(final TheaterName name) {
 		this.name = name;
 	}
 }

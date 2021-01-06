@@ -6,7 +6,7 @@ public class ScreenId extends Identity<ScreenId>
 {
 	final String value;
 
-	public ScreenId(String value) {
+	public ScreenId(final String value) {
 		this.value = value;
 	}
 }

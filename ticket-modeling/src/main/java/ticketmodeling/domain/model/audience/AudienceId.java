@@ -6,7 +6,7 @@ public class AudienceId extends Identity<AudienceId>
 {
 	final String value;
 
-	public AudienceId(String value) {
+	public AudienceId(final String value) {
 		this.value = value;
 	}
 

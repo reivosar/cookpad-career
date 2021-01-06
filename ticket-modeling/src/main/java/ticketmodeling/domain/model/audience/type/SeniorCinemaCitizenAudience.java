@@ -8,7 +8,7 @@ public class SeniorCinemaCitizenAudience extends IdentifiedAudience<SeniorCinema
 {
 	final SeniorCinemaCitizenIdentify identify;
 
-	public SeniorCinemaCitizenAudience(SeniorCinemaCitizenIdentify identify) {
+	public SeniorCinemaCitizenAudience(final SeniorCinemaCitizenIdentify identify) {
 		super(identify);
 		this.identify = identify;
 	}
