@@ -10,8 +10,7 @@ public abstract class Sort {
     }
 
     public Sort(final int[] array) {
-        this.array = arraycopy(array);
-        this.enableDebugging = false;
+        this(array, false);
     }
 
     protected int[] arraycopy(final int[] array) {
