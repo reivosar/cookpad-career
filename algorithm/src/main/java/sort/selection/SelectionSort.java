@@ -22,7 +22,7 @@ public class SelectionSort extends Sort
      *     平均:O(n2)
      *     最良:O(n2)
      *     最悪:O(n2)
-     *     安定性:安定
+     *     安定性:不安定 ※最小値を求める際、同じ値が来た場合に、元の並びが保持されない。
      * </pre>
      * @param array ソート前の配列
      * @param arraySize 配列の要素数
