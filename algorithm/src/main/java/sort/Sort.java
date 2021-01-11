@@ -37,24 +37,24 @@ public abstract class Sort {
         return result;
     }
 
-    private void startLog(long startTime) {
+    private void startLog(final long startTime) {
         System.out.println("===== " + getClass().getSimpleName() + " =====");
         System.out.println("開始時間:" + startTime + " ms");
     }
 
-    private void endLog(long startTime) {
+    private void endLog(final long startTime) {
         final long endTime = System.currentTimeMillis();
         System.out.println("終了時間:" + endTime + " ms");
         System.out.println("処理時間:" + (endTime - startTime) + " ms");
     }
 
-    protected void print(Object obj) {
+    protected void print(final Object obj) {
         if (enableDebugging) {
             System.out.print(obj);
         }
     }
 
-    protected void print_array(int[] array) {
+    protected void print_array(final int[] array) {
         if (enableDebugging) {
             print("array:");
             for (int i : array)
