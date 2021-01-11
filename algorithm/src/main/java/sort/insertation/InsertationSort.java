@@ -1,0 +1,48 @@
+package sort.insertation;
+
+import sort.Sort;
+
+public class InsertationSort extends Sort
+{
+    public InsertationSort(final int[] array) {
+        super(array);
+    }
+    public InsertationSort(final int[] array, final boolean enableDebugging) {
+        super(array, enableDebugging);
+    }
+
+    /**
+     * <pre>
+     * 挿入ソート処理.
+     *   《説明》
+     *     データの一部分をソート済みの状態にしながら,未ソートデータの各要素を一つずつ,ソート済みの
+     *     状態に挿入していく手法.
+     *
+     *   《計算量と安定性》
+     *     平均:O(n2)
+     *     最良:O(n) ※ソート済みであれば
+     *     最悪:O(n2)
+     *     安定性:安定
+     * </pre>
+     * @param array ソート前の配列
+     * @param arraySize 配列の要素数
+     * @return ソート後の配列
+     */
+    @Override
+    protected int[] sort(final int[] array, final int arraySize) {
+        int[] result = arraycopy(array);
+        int i, j, tmp;
+        for (i = 1; i < arraySize; i++) {
+            j = i;
+            while ((j >= 1) && (result[j - 1] > result[j])) {
+                tmp           = result[j];
+                result[j]     = result[j - 1];
+                result[j - 1] = tmp;
+                j--;
+                print(String.format(" i:%d j:%d ", i, j));
+                print_array(result);
+            }
+        }
+        return result;
+    }
+}

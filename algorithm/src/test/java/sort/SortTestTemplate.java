@@ -1,0 +1,30 @@
+package sort;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.*;
+
+import java.util.Arrays;
+import java.util.Random;
+
+import org.junit.jupiter.api.BeforeEach;
+
+abstract class SortTestTemplate
+{
+    private int[] random_array;
+    private int[] sorted_array;
+    protected Sort testClass;
+
+    @BeforeEach
+    void setup() {
+        this.random_array = new Random(100).ints(5, 1, 10).toArray();
+        this.testClass    = getTestClass        (random_array);
+        this.sorted_array = testClass.arraycopy (random_array);
+        Arrays.sort (sorted_array);
+    }
+
+    protected abstract Sort getTestClass(int[] random_array);
+
+    protected void assertArray(int[] result) {
+        assertThat(result, is(sorted_array));
+    }
+}

@@ -1,0 +1,67 @@
+package sort;
+
+public abstract class Sort {
+    private final int[] array;
+    private final boolean enableDebugging;
+
+    public Sort(final int[] array, final boolean enableDebugging) {
+        this.array = arraycopy(array);
+        this.enableDebugging = enableDebugging;
+    }
+
+    public Sort(final int[] array) {
+        this.array = arraycopy(array);
+        this.enableDebugging = false;
+    }
+
+    protected int[] arraycopy(final int[] array) {
+        final int[] result = new int[array.length];
+        System.arraycopy (array, 0, result, 0, array.length);
+        return result;
+    }
+
+    public final int[] execute() {
+        final long startTime = System.currentTimeMillis();
+        try {
+            startLog (startTime);
+            return doExecute();
+        } finally {
+            endLog (startTime);
+        }
+    }
+
+    private int[] doExecute() {
+        print_array (array);
+        final int[] result = sort(array, array.length);
+        print_array (result);
+        return result;
+    }
+
+    private void startLog(long startTime) {
+        System.out.println("===== " + getClass().getSimpleName() + " =====");
+        System.out.println("開始時間:" + startTime + " ms");
+    }
+
+    private void endLog(long startTime) {
+        final long endTime = System.currentTimeMillis();
+        System.out.println("終了時間:" + endTime + " ms");
+        System.out.println("処理時間:" + (endTime - startTime) + " ms");
+    }
+
+    protected void print(Object obj) {
+        if (enableDebugging) {
+            System.out.print(obj);
+        }
+    }
+
+    protected void print_array(int[] array) {
+        if (enableDebugging) {
+            print("array:");
+            for (int i : array)
+                print(String.valueOf(i) + " ");
+            System.out.println();
+        }
+    }
+
+    protected abstract int[] sort(int[] array, int arraySize);
+}
