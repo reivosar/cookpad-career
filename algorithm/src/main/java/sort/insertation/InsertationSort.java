@@ -1,8 +1,8 @@
 package sort.insertation;
 
-import sort.Sort;
+import sort.SortTemplate;
 
-public class InsertationSort extends Sort
+public class InsertationSort extends SortTemplate
 {
     public InsertationSort(final int[] array) {
         super(array);
@@ -15,8 +15,8 @@ public class InsertationSort extends Sort
      * <pre>
      * 挿入ソート処理.
      *   《説明》
-     *     データの一部分をソート済みの状態にしながら,未ソートデータの各要素を一つずつ,ソート済みの
-     *     状態に挿入していく手法.
+     *     データの一部分をソート済みの状態にしながら,未ソートデータの各要素を一つずつ、ソート済みの
+     *     状態に挿入していく手法。
      *
      *   《計算量と安定性》
      *     平均:O(n2)
@@ -31,13 +31,10 @@ public class InsertationSort extends Sort
     @Override
     protected int[] sort(final int[] array, final int arraySize) {
         int[] result = arraycopy(array);
-        int i, j, tmp;
-        for (i = 1; i < arraySize; i++) {
-            j = i;
+        for (int i = 1; i < arraySize; i++) {
+            int j = i;
             while ((j >= 1) && (result[j - 1] > result[j])) {
-                tmp           = result[j];
-                result[j]     = result[j - 1];
-                result[j - 1] = tmp;
+                swap(result, (j - 1), j);
                 j--;
                 print(String.format(" i:%d j:%d ", i, j));
                 print_array(result);

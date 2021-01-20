@@ -2,13 +2,13 @@ package sort;
 
 import org.junit.jupiter.api.Test;
 
-import sort.insertation.InsertationSort;
+import sort.quick.QuickSort;
 
-class InsertationSortTest extends SortTestTemplate {
-
+class QuickSortTest extends SortTestTemplate
+{
     @Override
     protected SortTemplate getTestClass(int[] random_array) {
-        return new InsertationSort(random_array);
+        return new QuickSort(random_array, true);
     }
 
     @Test

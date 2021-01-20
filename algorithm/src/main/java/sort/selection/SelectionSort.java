@@ -1,8 +1,8 @@
 package sort.selection;
 
-import sort.Sort;
+import sort.SortTemplate;
 
-public class SelectionSort extends Sort
+public class SelectionSort extends SortTemplate
 {
     public SelectionSort(final int[] array) {
         super(array);
@@ -16,7 +16,7 @@ public class SelectionSort extends Sort
      * 選択ソート処理.
      *   《説明》
      *     データのソートされていない部分から最小の部分を選択し、それを先頭部分へ移動するという操作
-     *     を繰り返す手法.
+     *     を繰り返す手法。
      *
      *   《計算量と安定性》
      *     平均:O(n2)
@@ -31,19 +31,16 @@ public class SelectionSort extends Sort
     @Override
     protected int[] sort(final int[] array, final int arraySize) {
         int[] result = arraycopy(array);
-        int i, j, tmp, min_idx;
-        for (i = 0; i < arraySize - 1; i++) {
-            min_idx = i;
-            for (j = (i + 1); j < arraySize; j++) {
+        for (int i = 0; i < arraySize - 1; i++) {
+            int min_idx = i;
+            for (int j = (i + 1); j < arraySize; j++) {
                 if (result[j] < result[min_idx]) {
                     min_idx = j;
                 }
                 print(String.format(" i:%d j:%d ", i, j));
                 print_array(result);
             }
-            tmp             = result[i];
-            result[i]       = result[min_idx];
-            result[min_idx] = tmp;
+            swap(result, min_idx, i);
         }
         return result;
     }

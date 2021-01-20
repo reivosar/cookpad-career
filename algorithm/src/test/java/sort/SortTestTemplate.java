@@ -12,17 +12,17 @@ abstract class SortTestTemplate
 {
     private int[] random_array;
     private int[] sorted_array;
-    protected Sort testClass;
+    protected SortTemplate testClass;
 
     @BeforeEach
     void setup() {
-        this.random_array = new Random(100).ints(5, 1, 10).toArray();
+        this.random_array = new Random(100).ints(10, 1, 10).toArray();
         this.testClass    = getTestClass        (random_array);
         this.sorted_array = testClass.arraycopy (random_array);
         Arrays.sort (sorted_array);
     }
 
-    protected abstract Sort getTestClass(int[] random_array);
+    protected abstract SortTemplate getTestClass(int[] random_array);
 
     protected void assertArray(int[] result) {
         assertThat(result, is(sorted_array));

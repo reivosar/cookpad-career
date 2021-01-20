@@ -7,7 +7,7 @@ import sort.bubble.BubbleSort;
 class BubbleSortTest extends SortTestTemplate
 {
     @Override
-    protected Sort getTestClass(int[] random_array) {
+    protected SortTemplate getTestClass(int[] random_array) {
         return new BubbleSort(random_array);
     }
 

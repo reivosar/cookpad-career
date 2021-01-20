@@ -1,8 +1,8 @@
 package sort.bubble;
 
-import sort.Sort;
+import sort.SortTemplate;
 
-public class BubbleSort extends Sort
+public class BubbleSort extends SortTemplate
 {
     public BubbleSort(final int[] array) {
         super(array);
@@ -15,7 +15,7 @@ public class BubbleSort extends Sort
      * <pre>
      * バブルソート処理.
      *   《説明》
-     *     隣接する要素の値の大小関係を比較し、大小関係が逆だったらそれを入れ替えていく手法.
+     *     隣接する要素の値の大小関係を比較し、大小関係が逆だったらそれを入れ替えていく手法。
      *
      *   《計算量と安定性》
      *     平均:O(n2)
@@ -30,13 +30,10 @@ public class BubbleSort extends Sort
     @Override
     protected int[] sort(final int[] array, final int arraySize) {
         int[] result = arraycopy(array);
-        int i, j, tmp;
-        for (i = 0; i < arraySize - 1; i++) {
-            for (j = 0; j < arraySize - i - 1; j++) {
+        for (int i = 0; i < arraySize - 1; i++) {
+            for (int j = 0; j < arraySize - i - 1; j++) {
                 if (result[j] > result[j + 1]) {
-                    tmp           = result[j];
-                    result[j]     = result[j + 1];
-                    result[j + 1] = tmp;
+                    swap(result, (j + 1), j);
                 }
                 print(String.format(" i:%d j:%d ", i, j));
                 print_array(result);

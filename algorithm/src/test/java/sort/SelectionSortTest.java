@@ -7,7 +7,7 @@ import sort.selection.SelectionSort;
 class SelectionSortTest extends SortTestTemplate
 {
     @Override
-    protected Sort getTestClass(int[] random_array) {
+    protected SortTemplate getTestClass(int[] random_array) {
         return new SelectionSort(random_array);
     }
 

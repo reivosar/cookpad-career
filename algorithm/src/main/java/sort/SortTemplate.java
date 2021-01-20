@@ -1,15 +1,15 @@
 package sort;
 
-public abstract class Sort {
+public abstract class SortTemplate {
     private final int[] array;
     private final boolean enableDebugging;
 
-    public Sort(final int[] array, final boolean enableDebugging) {
+    public SortTemplate(final int[] array, final boolean enableDebugging) {
         this.array = arraycopy(array);
         this.enableDebugging = enableDebugging;
     }
 
-    public Sort(final int[] array) {
+    public SortTemplate(final int[] array) {
         this(array, false);
     }
 
@@ -53,6 +53,11 @@ public abstract class Sort {
         }
     }
 
+    protected void println(final Object obj) {
+        print(obj);
+        System.out.println("");
+    }
+
     protected void print_array(final int[] array) {
         if (enableDebugging) {
             print("array:");
@@ -60,6 +65,12 @@ public abstract class Sort {
                 print(String.valueOf(i) + " ");
             System.out.println();
         }
+    }
+
+    protected void swap(final int[] array, int from, int to) {
+        final int tmp = array[to];
+        array[to]     = array[from];
+        array[from]   = tmp;
     }
 
     protected abstract int[] sort(int[] array, int arraySize);
