@@ -4,7 +4,6 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
 
 import java.util.Arrays;
-import java.util.Random;
 
 import org.junit.jupiter.api.BeforeEach;
 
@@ -16,7 +15,7 @@ abstract class SortTestTemplate
 
     @BeforeEach
     void setup() {
-        this.random_array = new Random(100).ints(10, 1, 10).toArray();
+        this.random_array = new int[] {2, 5, 1, 1, 3, 4};
         this.testClass    = getTestClass        (random_array);
         this.sorted_array = testClass.arraycopy (random_array);
         Arrays.sort (sorted_array);

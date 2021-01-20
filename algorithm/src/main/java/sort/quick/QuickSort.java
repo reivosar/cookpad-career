@@ -36,31 +36,31 @@ public class QuickSort extends SortTemplate
         return result;
     }
 
-    private void quicksort(String label, final int[] array, final int left, final int right) {
+    private void quicksort(final String label, final int[] array, final int left, final int right) {
+        println("===== " + label + " =====");
         if (left < right) {
             final int p = partition(label, array, left, right);
             println(String.format("  pivot:%d", p));
             quicksort("【LEFT】",  array, left,    (p - 1));
             quicksort("【RIGHT】", array, (p + 1), right);
+        } else {
+            println(String.format("  ★★★★★ IGNORED ★★★★★ left:%d right:%d", left, right));
         }
     }
 
-    private int partition(String label, final int[] array, final int left, final int right) {
-        println("===== " + label + " =====");
+    private int partition(final String label, final int[] array, final int left, final int right) {
         int num  = array[left];
         int down = left;
         int up   = right;
+        println(String.format("  num:%d left:%d right:%d", num, left, right));
         while (down < up) {
-            while ((array[down] <= num) && (down < right)) {
+            while ((array[down] <= num) && (down < right))
                 down++;
-            }
-            while (array[up] > num) {
+            while (array[up] > num)
                 up--;
-            }
             print(String.format("   down:%d up:%d ", down, up));
-            if (down < up) {
+            if (down < up)
                 swap(array, up, down);
-            }
             print_array(array);
         }
         array[left] = array[up];
