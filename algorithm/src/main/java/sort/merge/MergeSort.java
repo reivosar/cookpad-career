@@ -62,6 +62,7 @@ public class MergeSort extends SortTemplate
             else
                 array[i] = tmp[tmp_upper_bound--];
     }
+
     private void print_input_data(final int[] array, final int lower_bound, final int upper_bound, final int[] tmp) {
         println(String.format("  lower_bound:%d upper_bound:%d", lower_bound, upper_bound) );
         print("    Result ");  print_array(array);
