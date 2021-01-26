@@ -8,7 +8,7 @@ class QuickSortTest extends SortTestTemplate
 {
     @Override
     protected SortTemplate getTestClass(int[] random_array) {
-        return new QuickSort(random_array, true);
+        return new QuickSort(random_array);
     }
 
     @Test
