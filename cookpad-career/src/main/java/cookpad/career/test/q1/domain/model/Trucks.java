@@ -1,6 +1,7 @@
 package cookpad.career.test.q1.domain.model;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +53,6 @@ public class Trucks extends ValueObject<Trucks>
 	}
 
 	public Collection<Truck> allTrucks() {
-		return truckStore.values();
+		return Collections.unmodifiableCollection(truckStore.values());
 	}
 }
