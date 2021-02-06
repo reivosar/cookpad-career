@@ -10,7 +10,7 @@ public abstract class IdentifiedAudience<I extends AudienceIdentify, ENTITY exte
 		verify(identify);
 	}
 
-	protected void verify(final I identify) {
+	private void verify(final I identify) {
 		identify.verify();
 	}
 }
