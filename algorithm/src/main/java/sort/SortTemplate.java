@@ -37,14 +37,29 @@ public abstract class SortTemplate {
     }
 
     private void startLog(final long startTime) {
-        System.out.println("===== " + getClass().getSimpleName() + " =====");
-        System.out.println("開始時間:" + startTime + " ms");
+        System.out.println(getStartTimeLabel() + startTime + " ms");
     }
 
     private void endLog(final long startTime) {
         final long endTime = System.currentTimeMillis();
-        System.out.println("終了時間:" + endTime + " ms");
-        System.out.println("処理時間:" + (endTime - startTime) + " ms");
+        System.out.println(getEndtimeLabel() + endTime + " ms");
+        System.out.println(getProcessingTimeLabel() + (endTime - startTime) + " ms");
+    }
+
+    private String getStartTimeLabel() {
+        return labelFormat("開始時間");
+    }
+
+    private String getEndtimeLabel() {
+        return labelFormat("終了時間");
+    }
+
+    private String getProcessingTimeLabel() {
+        return  labelFormat("処理時間");
+    }
+
+    private String labelFormat(String label) {
+        return String.format(label +"(%s):", getClass().getSimpleName());
     }
 
     protected void print(final Object obj) {
@@ -54,8 +69,9 @@ public abstract class SortTemplate {
     }
 
     protected void println(final Object obj) {
-        print(obj);
-        System.out.println("");
+        if (enableDebugging) {
+            System.out.println(obj);
+        }
     }
 
     protected void print_array(final int[] array) {
