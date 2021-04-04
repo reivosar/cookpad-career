@@ -1,6 +1,6 @@
 package ticketmodeling.domain.model.audience;
 
-import reivosar.common.domain.model.Identity;
+import reivosar.common.util.model.Identity;
 
 public class AudienceId extends Identity<AudienceId>
 {

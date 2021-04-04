@@ -1,7 +1,7 @@
 package ticketmodeling.domain.model.ticket;
 
-import reivosar.common.domain.model.Entity;
 import reivosar.common.domain.model.money.Money;
+import reivosar.common.util.model.Entity;
 import ticketmodeling.domain.model.audience.AudienceId;
 import ticketmodeling.domain.model.price.Price;
 import ticketmodeling.domain.model.schedule.ScheduleId;

@@ -1,9 +1,9 @@
 package ticketmodeling.domain.model.audience;
 
-import reivosar.common.domain.model.Entity;
 import reivosar.common.domain.model.money.Money;
 import reivosar.common.domain.model.time.HourMinute;
 import reivosar.common.domain.model.time.YearMonthDay;
+import reivosar.common.util.model.Entity;
 import ticketmodeling.domain.model.price.DateAndTimePriceSpecific;
 import ticketmodeling.domain.model.price.Price;
 import ticketmodeling.domain.model.schedule.Schedule;

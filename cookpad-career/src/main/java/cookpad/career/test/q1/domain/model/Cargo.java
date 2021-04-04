@@ -1,6 +1,6 @@
 package cookpad.career.test.q1.domain.model;
 
-import reivosar.common.domain.model.Entity;
+import reivosar.common.util.model.Entity;
 
 public class Cargo extends Entity<CargoId, Cargo>
 {

@@ -1,6 +1,6 @@
 package ticketmodeling.domain.model.movie;
 
-import reivosar.common.domain.model.Identity;
+import reivosar.common.util.model.Identity;
 
 public class MovieId extends Identity<MovieId>
 {

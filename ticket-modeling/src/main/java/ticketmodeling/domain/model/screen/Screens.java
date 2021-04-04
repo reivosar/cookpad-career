@@ -2,7 +2,7 @@ package ticketmodeling.domain.model.screen;
 
 import java.util.Collection;
 
-import reivosar.common.domain.model.ValueObject;
+import reivosar.common.util.model.ValueObject;
 
 public class Screens extends ValueObject<Screens>
 {

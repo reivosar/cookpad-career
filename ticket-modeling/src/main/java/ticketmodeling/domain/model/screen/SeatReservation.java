@@ -1,6 +1,6 @@
 package ticketmodeling.domain.model.screen;
 
-import reivosar.common.domain.model.ValueObject;
+import reivosar.common.util.model.ValueObject;
 import ticketmodeling.domain.model.schedule.ScheduleId;
 
 public class SeatReservation extends ValueObject<SeatReservation>

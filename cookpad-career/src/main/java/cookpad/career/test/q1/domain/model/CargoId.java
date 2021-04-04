@@ -1,6 +1,6 @@
 package cookpad.career.test.q1.domain.model;
 
-import reivosar.common.domain.model.Identity;
+import reivosar.common.util.model.Identity;
 
 public class CargoId extends Identity<CargoId>
 {

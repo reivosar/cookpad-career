@@ -1,6 +1,6 @@
 package ticketmodeling.domain.model.screen;
 
-import reivosar.common.domain.model.ValueObject;
+import reivosar.common.util.model.ValueObject;
 
 public class ScreenName extends ValueObject<ScreenName>
 {

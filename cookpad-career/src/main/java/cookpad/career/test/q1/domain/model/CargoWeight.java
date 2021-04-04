@@ -2,7 +2,7 @@ package cookpad.career.test.q1.domain.model;
 
 import java.util.Arrays;
 
-import reivosar.common.domain.model.ValueObject;
+import reivosar.common.util.model.ValueObject;
 
 public class CargoWeight extends ValueObject<CargoWeight>
 {

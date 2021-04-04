@@ -3,8 +3,8 @@ package ticketmodeling.domain.model.price;
 import java.math.BigDecimal;
 import java.util.Currency;
 
-import reivosar.common.domain.model.ValueObject;
 import reivosar.common.domain.model.money.Money;
+import reivosar.common.util.model.ValueObject;
 
 public class Price extends ValueObject<Price>
 {

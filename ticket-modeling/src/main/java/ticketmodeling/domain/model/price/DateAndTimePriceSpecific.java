@@ -1,8 +1,8 @@
 package ticketmodeling.domain.model.price;
 
-import reivosar.common.domain.model.ValueObject;
 import reivosar.common.domain.model.time.HourMinute;
 import reivosar.common.domain.model.time.YearMonthDay;
+import reivosar.common.util.model.ValueObject;
 
 public class DateAndTimePriceSpecific extends ValueObject<DateAndTimePriceSpecific>
 {

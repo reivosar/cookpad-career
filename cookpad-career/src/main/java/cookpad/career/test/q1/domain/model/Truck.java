@@ -2,7 +2,7 @@ package cookpad.career.test.q1.domain.model;
 
 import java.util.Collection;
 
-import reivosar.common.domain.model.Entity;
+import reivosar.common.util.model.Entity;
 
 public class Truck extends Entity<TruckId, Truck>
 {

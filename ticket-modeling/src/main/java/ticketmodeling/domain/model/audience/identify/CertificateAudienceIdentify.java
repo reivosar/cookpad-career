@@ -2,7 +2,7 @@ package ticketmodeling.domain.model.audience.identify;
 
 import java.security.cert.Certificate;
 
-import reivosar.common.domain.model.ValueObject;
+import reivosar.common.util.model.ValueObject;
 import ticketmodeling.domain.model.audience.AudienceId;
 
 abstract class CertificateAudienceIdentify<T extends CertificateAudienceIdentify<T>>
